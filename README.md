@@ -1,4 +1,4 @@
-# ProyectoTitulo
+# Proyecto de Titulo "Req Duel"
 Juego para Proyecto de Título ICF 2024
 
 Autores
