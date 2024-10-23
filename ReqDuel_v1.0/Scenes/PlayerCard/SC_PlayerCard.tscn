@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=3 uid="uid://uifvtn82bj1u"]
+
+[ext_resource type="Script" path="res://Scenes/PlayerCard/Scrpt_Card.gd" id="2_afypk"]
+[ext_resource type="Texture2D" uid="uid://dchpnfxrwlnr2" path="res://Assets/IMG_Templates/Template_Stakeholder.png" id="2_ajl2m"]
+[ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="2_dl73p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn7eq"]
+size = Vector2(545.21, 848.488)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn3fs"]
+content_margin_left = 40.0
+content_margin_top = 70.0
+content_margin_right = 40.0
+content_margin_bottom = 70.0
+bg_color = Color(0, 0, 0, 0.823529)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="GDScript" id="GDScript_0dtnm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qtad"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[node name="PlayerCard" type="Node2D" node_paths=PackedStringArray("image_texture_rect")]
+position = Vector2(96, 128)
+script = ExtResource("2_afypk")
+image_texture_rect = NodePath("CardSprite/image_texture_rect")
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.162909, 0.133457)
+texture = ExtResource("2_ajl2m")
+
+[node name="Area_card" type="Area2D" parent="CardSprite"]
+position = Vector2(-562.461, -983.429)
+scale = Vector2(1.80141, 2.11946)
+metadata/_edit_lock_ = true
+
+[node name="CollCard" type="CollisionShape2D" parent="CardSprite/Area_card"]
+visible = false
+z_index = 1
+position = Vector2(312.134, 464.419)
+shape = SubResource("RectangleShape2D_hn7eq")
+
+[node name="image_texture_rect" type="TextureRect" parent="CardSprite"]
+z_index = -1
+anchors_preset = -1
+anchor_left = -3.28629e-05
+anchor_top = -0.0311056
+anchor_right = -3.28629e-05
+anchor_bottom = 0.000144355
+offset_left = -441.965
+offset_top = -779.277
+offset_right = 437.035
+offset_bottom = 59.7228
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="CardSprite"]
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.781
+anchor_right = 0.5
+anchor_bottom = 0.781
+offset_left = -957.447
+offset_top = -1258.52
+offset_right = -122.447
+offset_bottom = -660.52
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Cost" type="Label" parent="CardSprite"]
+anchors_preset = -1
+anchor_left = -0.0734693
+anchor_top = 0.0166753
+anchor_right = 0.0765307
+offset_left = -215.296
+offset_top = 27.9278
+offset_right = 256.704
+offset_bottom = 227.928
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_dl73p")
+theme_override_font_sizes/font_size = 150
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="CardSprite"]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1080.0
+offset_top = -1919.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_dl73p")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_hn3fs")
+text = "Run"
+horizontal_alignment = 1
+autowrap_mode = 3
+script = SubResource("GDScript_0dtnm")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ID" type="Label" parent="CardSprite"]
+visible = false
+z_index = 9
+anchors_preset = -1
+anchor_left = -0.008
+anchor_top = -0.00571429
+anchor_right = 0.016
+anchor_bottom = 0.00571429
+offset_left = -229.568
+offset_top = -573.999
+offset_right = 230.432
+offset_bottom = -241.999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Outline" type="Label" parent="CardSprite"]
+visible = false
+z_index = -2
+offset_left = -589.0
+offset_top = -1019.0
+offset_right = 589.0
+offset_bottom = 1019.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4qtad")
+
+[connection signal="input_event" from="CardSprite/Area_card" to="." method="_on_area_card_input_event"]
+[connection signal="mouse_entered" from="CardSprite/Area_card" to="." method="_on_area_card_mouse_entered"]
+[connection signal="mouse_exited" from="CardSprite/Area_card" to="." method="_on_area_card_mouse_exited"]
+[connection signal="focus_entered" from="CardSprite/Outline" to="." method="_on_outline_focus_entered"]
+[connection signal="focus_exited" from="CardSprite/Outline" to="." method="_on_outline_focus_exited"]

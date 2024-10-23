@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh2vlilx6d0ou"]
+
+[sub_resource type="GDScript" id="GDScript_gh2wh"]
+script/source = "extends Node2D
+
+
+func _ready():
+	pass
+
+func _process(delta):
+	pass"
+
+[node name="Test" type="Node2D"]
+position = Vector2(77, 71)
+script = SubResource("GDScript_gh2wh")
+
+[node name="Child1" type="Node2D" parent="."]
+position = Vector2(257, 105)
+
+[node name="Child2" type="Node2D" parent="."]
+position = Vector2(257, 105)
+
+[node name="Child3" type="Node2D" parent="."]
+position = Vector2(257, 105)
+
+[node name="Child4" type="Node2D" parent="."]
+position = Vector2(257, 105)
+
+[node name="Child5" type="Node2D" parent="."]
+position = Vector2(257, 105)

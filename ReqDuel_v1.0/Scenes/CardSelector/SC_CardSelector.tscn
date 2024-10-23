@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://del8c66p3rv62"]
+
+[ext_resource type="Script" path="res://Scenes/CardSelector/Scrpt_CardSelector.gd" id="1_r0kgk"]
+[ext_resource type="PackedScene" uid="uid://c1miqjqy05euk" path="res://Scenes/CardSlots/SC_CardSlots.tscn" id="2_0sbbl"]
+
+[node name="CardSelector" type="Node2D"]
+z_index = 6
+script = ExtResource("1_r0kgk")
+
+[node name="CardSlots" parent="." instance=ExtResource("2_0sbbl")]
+position = Vector2(928, 544)

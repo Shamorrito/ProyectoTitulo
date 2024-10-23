@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://72070gl4l86g"]
+
+[ext_resource type="Script" path="res://Scenes/MetroLevel/Scrpt_MetroLevel.gd" id="1_b45ut"]
+[ext_resource type="Texture2D" uid="uid://cnknryub1v0eu" path="res://Textures/surface grey.png" id="2_t1wl4"]
+[ext_resource type="PackedScene" uid="uid://xidjyrq5ni83" path="res://Scenes/UI/SC_UI.tscn" id="3_2kus1"]
+[ext_resource type="Texture2D" uid="uid://kpgxj5m65r2c" path="res://Textures/Deck back.png" id="4_gihds"]
+[ext_resource type="Script" path="res://Scenes/MetroLevel/Scrpt_Deck.gd" id="5_h3jlw"]
+[ext_resource type="Texture2D" uid="uid://ju6qtsoo41bp" path="res://Textures/Graveyard.png" id="6_x4vuu"]
+[ext_resource type="PackedScene" uid="uid://c1miqjqy05euk" path="res://Scenes/CardSlots/SC_CardSlots.tscn" id="7_isgr2"]
+[ext_resource type="Texture2D" uid="uid://dwucpfd0qsjxe" path="res://Textures/BG.jpg" id="8_yp0ay"]
+
+[node name="MetroLevel" type="Node2D"]
+script = ExtResource("1_b45ut")
+
+[node name="Tablero" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(900, 540)
+scale = Vector2(5.8, 4)
+texture = ExtResource("2_t1wl4")
+region_rect = Rect2(245.625, 207.125, 1569.38, 1566)
+
+[node name="UI" parent="." instance=ExtResource("3_2kus1")]
+position = Vector2(1768, 386)
+
+[node name="Deck" type="Sprite2D" parent="."]
+position = Vector2(89, 706)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("4_gihds")
+script = ExtResource("5_h3jlw")
+
+[node name="CardCount" type="Label" parent="Deck"]
+offset_left = -216.0
+offset_top = 52.0
+offset_right = 240.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 79
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Graveyard" type="Sprite2D" parent="."]
+position = Vector2(89, 453)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("6_x4vuu")
+
+[node name="CardSlots" parent="." instance=ExtResource("7_isgr2")]
+position = Vector2(309, 857)
+
+[node name="EnemySlots" parent="." instance=ExtResource("7_isgr2")]
+position = Vector2(830, 200)
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(972.5, 540.5)
+scale = Vector2(1.51953, 1.49306)
+texture = ExtResource("8_yp0ay")

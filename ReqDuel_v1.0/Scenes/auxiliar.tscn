@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://8m8cy0u6fory"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlbal"]
+size = Vector2(110, 154)
+
+[node name="Auxiliar" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="CardSlot1" type="Area2D" parent="."]
+position = Vector2(575, 550)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot1" type="CollisionShape2D" parent="CardSlot1"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot2" type="Area2D" parent="."]
+position = Vector2(435, 550)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot2" type="CollisionShape2D" parent="CardSlot2"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot3" type="Area2D" parent="."]
+position = Vector2(715, 550)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot3" type="CollisionShape2D" parent="CardSlot3"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot4" type="Area2D" parent="."]
+position = Vector2(295, 550)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot4" type="CollisionShape2D" parent="CardSlot4"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot5" type="Area2D" parent="."]
+position = Vector2(855, 550)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot5" type="CollisionShape2D" parent="CardSlot5"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot6" type="Area2D" parent="."]
+position = Vector2(575, 380)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot6" type="CollisionShape2D" parent="CardSlot6"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot7" type="Area2D" parent="."]
+position = Vector2(435, 380)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot7" type="CollisionShape2D" parent="CardSlot7"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot8" type="Area2D" parent="."]
+position = Vector2(715, 380)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot8" type="CollisionShape2D" parent="CardSlot8"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot9" type="Area2D" parent="."]
+position = Vector2(295, 380)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot9" type="CollisionShape2D" parent="CardSlot9"]
+shape = SubResource("RectangleShape2D_nlbal")
+
+[node name="CardSlot10" type="Area2D" parent="."]
+position = Vector2(855, 380)
+metadata/_edit_lock_ = true
+
+[node name="CollSlot10" type="CollisionShape2D" parent="CardSlot10"]
+shape = SubResource("RectangleShape2D_nlbal")

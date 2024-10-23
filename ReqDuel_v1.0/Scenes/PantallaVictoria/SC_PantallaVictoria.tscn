@@ -1,0 +1,247 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpcynx4j3vyif"]
+
+[ext_resource type="Script" path="res://Scenes/PantallaVictoria/Script_PantallaVictoria.gd" id="1_8e1we"]
+[ext_resource type="FontFile" uid="uid://bu74tn1pecc8h" path="res://Assets/Fonts/Bauhaus 93 Regular.ttf" id="2_72hqc"]
+[ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="2_ctmts"]
+[ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="4_l3l8r"]
+[ext_resource type="AudioStream" uid="uid://v6hx5kixlby1" path="res://Assets/Audio/Victoria.mp3" id="5_40fob"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1blco"]
+load_path = "res://.godot/imported/PantallaVictoria.jpg-6bd23c03318887e37e2f36cf2cef6c82.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41287"]
+bg_color = Color(0, 0.54902, 0.0392157, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.470588, 0.0392157, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqgws"]
+bg_color = Color(0, 0.470588, 0.0392157, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.392157, 0.0392157, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peys2"]
+bg_color = Color(0, 0.392157, 0.0392157, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.313726, 0.0392157, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jusmu"]
+
+[sub_resource type="FontVariation" id="FontVariation_v8xql"]
+base_font = ExtResource("2_72hqc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kunyg"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 0.501961)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.470588, 0.470588, 0.470588, 0.752941)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow858"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.313726, 0.313726, 0.313726, 0.501961)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.470588, 0.470588, 0.470588, 0.752941)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2p36"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yo7l"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[node name="ScPantallaVictoria" type="Node2D"]
+script = ExtResource("1_8e1we")
+
+[node name="ReqDuelBG" type="TextureRect" parent="."]
+modulate = Color(0.393086, 0.393086, 0.393085, 1)
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CompressedTexture2D_1blco")
+metadata/_edit_lock_ = true
+
+[node name="BtnVictoria" type="Button" parent="."]
+z_index = 1
+offset_left = 704.0
+offset_top = 880.0
+offset_right = 1216.0
+offset_bottom = 976.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_ctmts")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_41287")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mqgws")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_peys2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jusmu")
+text = "Volver al Inicio"
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 1408.0
+offset_bottom = 320.0
+theme_override_fonts/font = SubResource("FontVariation_v8xql")
+theme_override_font_sizes/font_size = 200
+text = "REQ DUEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mensaje" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 312.0
+offset_right = 904.0
+offset_bottom = 712.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_kunyg")
+text = "¡Lograste satisfacer por 10 días
+a los usuarios!
+Gracias a ti, el metro funciona
+mejor que nunca"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxPuntaje" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 312.0
+offset_right = 1800.0
+offset_bottom = 712.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow858")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UsuariosSatisfechos" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 776.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Usuarios Satisfechos: 00"
+horizontal_alignment = 1
+
+[node name="CartasUtilizadas" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 776.0
+offset_bottom = 138.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Cartas Utilizadas: 00"
+horizontal_alignment = 1
+
+[node name="CartasSinEfecto" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 776.0
+offset_bottom = 202.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Cartas Sin Efecto: 00"
+horizontal_alignment = 1
+
+[node name="SolucionesParciales" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 200.0
+offset_right = 776.0
+offset_bottom = 266.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Soluciones Parciales: 00"
+horizontal_alignment = 1
+
+[node name="SolucionesTotales" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 264.0
+offset_right = 776.0
+offset_bottom = 330.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Soluciones Totales: 00"
+horizontal_alignment = 1
+
+[node name="MitigacionesUsadas" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 328.0
+offset_right = 776.0
+offset_bottom = 394.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Mitigaciones Usadas: 00"
+horizontal_alignment = 1
+
+[node name="PuntajeTotal" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 760.0
+offset_right = 1344.0
+offset_bottom = 837.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7yo7l")
+text = "Puntaje Total: 00"
+horizontal_alignment = 1
+
+[node name="SonidoVictoria" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_40fob")
+
+[connection signal="pressed" from="BtnVictoria" to="." method="_on_btn_victoria_pressed"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=16 format=3 uid="uid://72070gl4l86g"]
+
+[ext_resource type="Script" path="res://Scenes/MetroLevel/Scrpt_MetroLevel.gd" id="1_b45ut"]
+[ext_resource type="PackedScene" uid="uid://xidjyrq5ni83" path="res://Scenes/UI/SC_UI.tscn" id="3_2kus1"]
+[ext_resource type="Texture2D" uid="uid://b6r4aefkocwnf" path="res://Assets/IMG_Templates/Template_Deck.png" id="4_vri0n"]
+[ext_resource type="Script" path="res://Scenes/MetroLevel/Scrpt_Deck.gd" id="5_h3jlw"]
+[ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="6_glvjx"]
+[ext_resource type="Texture2D" uid="uid://sk47kph8ymbr" path="res://Assets/IMG_Templates/Template_Card_Back.png" id="7_aswa0"]
+[ext_resource type="PackedScene" uid="uid://c1miqjqy05euk" path="res://Scenes/CardSlots/SC_CardSlots.tscn" id="7_isgr2"]
+[ext_resource type="FontFile" uid="uid://bu74tn1pecc8h" path="res://Assets/Fonts/Bauhaus 93 Regular.ttf" id="8_q3s1f"]
+[ext_resource type="AudioStream" uid="uid://benj7pspyfyit" path="res://Assets/Audio/Mitigacion.mp3" id="9_5h0s1"]
+[ext_resource type="AudioStream" uid="uid://bf8m6p5yyt7ps" path="res://Assets/Audio/SinEfecto.mp3" id="10_qajln"]
+[ext_resource type="AudioStream" uid="uid://38ag8pn1j3nf" path="res://Assets/Audio/SolucionParcial.mp3" id="11_i24fq"]
+[ext_resource type="AudioStream" uid="uid://b3ykhdoyrsh03" path="res://Assets/Audio/SolucionTotal.mp3" id="12_sy5di"]
+[ext_resource type="AudioStream" uid="uid://7olu7s6s3r78" path="res://Assets/Audio/ReqDuel_BGM.mp3" id="13_lajej"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y37be"]
+load_path = "res://.godot/imported/BG.jpg-508d8719f4de30f9e8ee5e864f969ed5.ctex"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wboky"]
+specular_color = Color(0, 0.452354, 0.452353, 1)
+
+[node name="MetroLevel" type="Node2D"]
+z_index = 2
+z_as_relative = false
+script = ExtResource("1_b45ut")
+
+[node name="ReqDuelBG" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CompressedTexture2D_y37be")
+
+[node name="Tablero" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
+z_index = 2
+position = Vector2(928, 540)
+scale = Vector2(1343.46, 1048.26)
+texture = SubResource("CanvasTexture_wboky")
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+z_index = 6
+offset_right = 1920.0
+offset_bottom = 1088.0
+color = Color(0, 0, 0, 0.752941)
+
+[node name="UI" parent="." instance=ExtResource("3_2kus1")]
+z_index = 3
+position = Vector2(1768, 386)
+
+[node name="Deck" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(129.25, 768)
+scale = Vector2(0.150463, 0.133333)
+texture = ExtResource("4_vri0n")
+script = ExtResource("5_h3jlw")
+
+[node name="CardCount" type="Label" parent="Deck"]
+z_index = 2
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.781
+anchor_right = 0.5
+anchor_bottom = 0.781
+offset_left = -1080.0
+offset_top = -1139.52
+offset_bottom = -779.52
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_glvjx")
+theme_override_font_sizes/font_size = 230
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Deck_Label" type="Label" parent="Deck"]
+z_index = 2
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.375
+anchor_right = 0.5
+anchor_bottom = 0.375
+offset_left = -1026.83
+offset_top = -1140.0
+offset_right = -142.831
+offset_bottom = -781.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_q3s1f")
+theme_override_font_sizes/font_size = 200
+text = "REQ DUEL
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Graveyard" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 384)
+scale = Vector2(0.162963, 0.133724)
+texture = ExtResource("7_aswa0")
+
+[node name="Graveyard_Label" type="Label" parent="Graveyard"]
+z_index = 2
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.375
+anchor_right = 0.5
+anchor_bottom = 0.375
+offset_left = -982.0
+offset_top = -1139.0
+offset_right = -98.0
+offset_bottom = -780.0
+theme_override_fonts/font = ExtResource("8_q3s1f")
+theme_override_font_sizes/font_size = 200
+text = "REQ DUEL
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardSlots" parent="." instance=ExtResource("7_isgr2")]
+z_index = 3
+position = Vector2(320, 960)
+
+[node name="EnemySlots" parent="." instance=ExtResource("7_isgr2")]
+z_index = 3
+position = Vector2(832, 224)
+
+[node name="Mitigacion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_5h0s1")
+
+[node name="SinEfecto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_qajln")
+
+[node name="SolucionParcial" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_i24fq")
+
+[node name="SolucionTotal" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(880, 528)
+stream = ExtResource("12_sy5di")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_lajej")
+volume_db = -16.957

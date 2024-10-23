@@ -1,0 +1,228 @@
+[gd_scene load_steps=14 format=3 uid="uid://xnffcjjmxb1d"]
+
+[ext_resource type="Script" path="res://Scenes/PantallaDerrota/Script_PantallaDerrota.gd" id="1_wf8kw"]
+[ext_resource type="FontFile" uid="uid://bu74tn1pecc8h" path="res://Assets/Fonts/Bauhaus 93 Regular.ttf" id="2_0v2el"]
+[ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="2_12lwy"]
+[ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="4_vk7by"]
+[ext_resource type="AudioStream" uid="uid://c7ncyyk6xenda" path="res://Assets/Audio/Derrota.mp3" id="5_ex8d8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vegd0"]
+load_path = "res://.godot/imported/PantallaDerrota.jpg-8ae0e77bb6d545b9b07b2084cd487782.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6spk2"]
+bg_color = Color(0.54902, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.470588, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owv5g"]
+bg_color = Color(0.470588, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.392157, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5pgk"]
+bg_color = Color(0.392157, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.313726, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jyaa7"]
+
+[sub_resource type="FontVariation" id="FontVariation_2f7ev"]
+base_font = ExtResource("2_0v2el")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sw1k"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.313726, 0.313726, 0.313726, 0.501961)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.470588, 0.470588, 0.470588, 0.752941)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf4f8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[node name="PantallaDerrota" type="Node2D"]
+script = ExtResource("1_wf8kw")
+
+[node name="ReqDuelBG" type="TextureRect" parent="."]
+modulate = Color(0.393086, 0.393086, 0.393085, 1)
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CompressedTexture2D_vegd0")
+metadata/_edit_lock_ = true
+
+[node name="BtnDerrota" type="Button" parent="."]
+z_index = 1
+offset_left = 704.0
+offset_top = 880.0
+offset_right = 1216.0
+offset_bottom = 976.0
+theme_override_fonts/font = ExtResource("2_12lwy")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_6spk2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_owv5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t5pgk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jyaa7")
+text = "Volver al Inicio"
+
+[node name="Titulo" type="Label" parent="."]
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 1408.0
+offset_bottom = 320.0
+theme_override_fonts/font = SubResource("FontVariation_2f7ev")
+theme_override_font_sizes/font_size = 200
+text = "REQ DUEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mensaje" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 312.0
+offset_right = 904.0
+offset_bottom = 712.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2sw1k")
+text = "No pudiste solucionar los problemas a tiempo,
+¡los usuarios estan furiosos!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxPuntaje" type="Label" parent="."]
+offset_left = 1016.0
+offset_top = 312.0
+offset_right = 1800.0
+offset_bottom = 712.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2sw1k")
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_group_ = true
+
+[node name="UsuariosSatisfechos" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 776.0
+offset_bottom = 74.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Usuarios Satisfechos: 00"
+horizontal_alignment = 1
+
+[node name="CartasUtilizadas" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 776.0
+offset_bottom = 138.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Cartas Utilizadas: 00"
+horizontal_alignment = 1
+
+[node name="CartasSinEfecto" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 136.0
+offset_right = 776.0
+offset_bottom = 202.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Cartas Sin Efecto: 00"
+horizontal_alignment = 1
+
+[node name="SolucionesParciales" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 200.0
+offset_right = 776.0
+offset_bottom = 266.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Soluciones Parciales: 00"
+horizontal_alignment = 1
+
+[node name="SolucionesTotales" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 264.0
+offset_right = 776.0
+offset_bottom = 330.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Soluciones Totales: 00"
+horizontal_alignment = 1
+
+[node name="DiasTranscurridos" type="Label" parent="BoxPuntaje"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 328.0
+offset_right = 776.0
+offset_bottom = 394.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Dias Transcurridos: 00"
+horizontal_alignment = 1
+
+[node name="PuntajeTotal" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 760.0
+offset_right = 1344.0
+offset_bottom = 837.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_vk7by")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tf4f8")
+text = "Puntaje Total: 00"
+horizontal_alignment = 1
+
+[node name="SonidoDerrota" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ex8d8")
+
+[connection signal="pressed" from="BtnDerrota" to="." method="_on_btn_derrota_pressed"]

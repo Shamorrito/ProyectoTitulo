@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://xidjyrq5ni83"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Scrpt_UI.gd" id="1_dh7iq"]
+[ext_resource type="Texture2D" uid="uid://bg6bo88i5g4d2" path="res://Assets/IMG_UI/Presupuesto.png" id="2_rb1os"]
+[ext_resource type="Texture2D" uid="uid://fg6li552oj4w" path="res://Assets/IMG_UI/Calendario.png" id="2_y80kt"]
+[ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="3_g1p5c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcuw1"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pf6t"]
+bg_color = Color(0.76662, 0.76662, 0.76662, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hu5d"]
+bg_color = Color(0.404511, 0.404511, 0.404511, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4k2ij"]
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_dh7iq")
+
+[node name="Calendario" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_y80kt")
+metadata/_edit_group_ = true
+
+[node name="txtDays" type="Label" parent="Calendario"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -480.0
+offset_right = -96.0
+offset_bottom = -96.0
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1p5c")
+theme_override_font_sizes/font_size = 130
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Presupuesto" type="Sprite2D" parent="."]
+position = Vector2(6.67572e-06, 288)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_rb1os")
+metadata/_edit_group_ = true
+
+[node name="txtBudget" type="Label" parent="Presupuesto"]
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.687
+anchor_right = 0.083
+anchor_bottom = 0.687
+offset_left = -426.744
+offset_top = -351.744
+offset_right = 149.256
+offset_bottom = -159.744
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1p5c")
+theme_override_font_sizes/font_size = 120
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnPassTurn" type="Button" parent="."]
+offset_left = -128.0
+offset_top = 448.0
+offset_right = 128.0
+offset_bottom = 544.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.230315, 0.230315, 0.230315, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1p5c")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcuw1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3pf6t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3hu5d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4k2ij")
+text = "Pasar Turno"
+
+[connection signal="pressed" from="BtnPassTurn" to="." method="_on_btn_pass_turn_pressed"]
