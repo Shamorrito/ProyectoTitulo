@@ -24,8 +24,7 @@ func _ready():
 	for i in range(5):
 		dealCard()
 	chooseEnemy()
-
-
+	
 func dealCard(): #robar carta nueva
 	if len(cardsList) > 0 && ($CardSlots.cardsOnPlay) <= 11:
 		var turno = "Turno " + str($UI.day)  # Esto construye "Turno 1")
@@ -53,6 +52,7 @@ func dealCard(): #robar carta nueva
 			$Deck/CardCount.text = "%d carta"%(len(cardsList))
 		else:
 			$Deck/CardCount.text = "%d cartas"%(len(cardsList))
+
 func chooseEnemy():
 	if  len(enemycardsList) > 0 && ($EnemySlots.cardsOnPlay) <= 4:
 		var turno = "Turno " + str($UI.day)  # Esto construye "Turno 1")
@@ -76,6 +76,7 @@ func chooseEnemy():
 		new_card.add_to_group("cards")
 		
 func on_PassTurnButtonPressed(): #Trigger para repartir carta
+	$Mensaje.visible = false
 	$Tablero.modulate = Color(1, 1, 1, 0.384)
 	# Revisa todas las cartas generadas y verifica su tipo
 	if $UI.day <= 10:
@@ -118,12 +119,20 @@ func Attack(solucion,stakeholder):
 		stakeholder.queue_free()
 		selectedCard= null
 		cartaAtacada = null
+		$Mensaje.text = "Stakeholder Satisfecho Totalmente"
+		$Mensaje.visible = true
+		await get_tree().create_timer(3).timeout  # Espera 2 segundos
+		$Mensaje.visible = false  # Esto hará que el Label sea invisible
 	
 	# Verifica si el ID está en el array de parches
 	elif id_carta_atacante in card_data.parches:
 		# Acciones a realizar si la carta está en el array de parches
 		if stakeholder.parche == 0:
 			$SolucionParcial.play()
+			$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
+			$Mensaje.visible = true
+			await get_tree().create_timer(3).timeout  # Espera 2 segundos
+			$Mensaje.visible = false  # Esto hará que el Label sea invisible
 			St_GlobalSignals.Puntaje["Puntos"]["parches"] += 1
 			ataque = ("%s -> %s = Parche" %[solucion.ID, stakeholder.ID])
 			St_GlobalSignals.Puntaje[turno]["Ataques"].append(ataque)
@@ -144,6 +153,11 @@ func Attack(solucion,stakeholder):
 			stakeholder.queue_free()
 			selectedCard= null
 			cartaAtacada = null
+			$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
+			$Mensaje.visible = true
+			await get_tree().create_timer(3).timeout  # Espera 2 segundos
+			$Mensaje.visible = false  # Esto hará que el Label sea invisible
+		
 
 	# Verifica si el ID está en el array de no afecta
 	else:
@@ -158,6 +172,10 @@ func Attack(solucion,stakeholder):
 		St_GlobalSignals.Puntaje["Puntos"]["incorrectas"] += 1
 		ataque = ("%s -> %s = Fallo" %[solucion.ID, stakeholder.ID])
 		St_GlobalSignals.Puntaje[turno]["Ataques"].append(ataque)
+		$Mensaje.text = "La solución no tuvo efecto"
+		$Mensaje.visible = true
+		await get_tree().create_timer(3).timeout  # Espera 2 segundos
+		$Mensaje.visible = false  # Esto hará que el Label sea invisible
 	
 
 func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
@@ -183,6 +201,11 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 					ataque = ("%s" %[card.ID])
 					St_GlobalSignals.Puntaje[turno]["MitigacionesJugadas"].append(ataque)
 				selectedCard= null
+			else:
+				$Mensaje.text = "No hay presupuesto suficiente"
+				$Mensaje.visible = true
+				await get_tree().create_timer(3).timeout  # Espera 2 segundos
+				$Mensaje.visible = false  # Esto hará que el Label sea invisible
 
 		elif (card.type) == "Solucion" && (selectedCard) != null && selectedCard.ID in ["M03","M06"]:
 			if  $UI.budgetCurrent >= selectedCard.cost:
@@ -199,6 +222,11 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				ataque = ("%s -> %s" %[selectedCard.ID, card.ID])
 				St_GlobalSignals.Puntaje[turno]["MitigacionesJugadas"].append(ataque)
 				selectedCard= null
+			else:
+				$Mensaje.text = "No hay presupuesto suficiente"
+				$Mensaje.visible = true
+				await get_tree().create_timer(3).timeout  # Espera 2 segundos
+				$Mensaje.visible = false  # Esto hará que el Label sea invisible
 
 		elif (card.type) == "Solucion" or (card.type) == "Mitigacion":
 			card.get_node("CardSprite/Outline").visible = true
@@ -226,5 +254,10 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 						if cartas.placing == "graveyard":
 							cartas.en_graveyard()
 					Attack(selectedCard,cartaAtacada)
+			else:
+				$Mensaje.text = "No hay presupuesto suficiente"
+				$Mensaje.visible = true
+				await get_tree().create_timer(3).timeout  # Espera 2 segundos
+				$Mensaje.visible = false  # Esto hará que el Label sea invisible
 
 

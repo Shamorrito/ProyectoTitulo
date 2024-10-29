@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" path="res://Scenes/PantallaVictoria/Script_PantallaVictoria.gd" id="1_8e1we"]
 [ext_resource type="FontFile" uid="uid://bu74tn1pecc8h" path="res://Assets/Fonts/Bauhaus 93 Regular.ttf" id="2_72hqc"]
+[ext_resource type="Texture2D" uid="uid://4oxygmy6i1vo" path="res://Assets/IMG_Pantallas/PantallaVictoria.jpg" id="2_a20cs"]
 [ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="2_ctmts"]
 [ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="4_l3l8r"]
 [ext_resource type="AudioStream" uid="uid://v6hx5kixlby1" path="res://Assets/Audio/Victoria.mp3" id="5_40fob"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1blco"]
-load_path = "res://.godot/imported/PantallaVictoria.jpg-6bd23c03318887e37e2f36cf2cef6c82.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41287"]
 bg_color = Color(0, 0.54902, 0.0392157, 1)
@@ -88,11 +86,11 @@ script = ExtResource("1_8e1we")
 
 [node name="ReqDuelBG" type="TextureRect" parent="."]
 modulate = Color(0.393086, 0.393086, 0.393085, 1)
+top_level = true
 z_index = -1
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("CompressedTexture2D_1blco")
-metadata/_edit_lock_ = true
+texture = ExtResource("2_a20cs")
 
 [node name="BtnVictoria" type="Button" parent="."]
 z_index = 1

@@ -76,9 +76,14 @@ func executeEffect (card, stake):
 		"M12":
 			if stake.parche == 0:
 				stake.parche = stake.parche + 1
+				$Mensaje.visible = true
+				$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
 			elif stake.parche == 1:
 				get_tree().root.get_node("MetroLevel/EnemySlots").card_Exited(stake)
 				stake.queue_free()
+				$Mensaje.visible = true
+				$Mensaje.text = "Stakeholder Satisfecho Totalmente"
+			
 		"M13":
 			var cardSelector = cardSelectorPre.instantiate()
 			var mainScene = get_tree().current_scene

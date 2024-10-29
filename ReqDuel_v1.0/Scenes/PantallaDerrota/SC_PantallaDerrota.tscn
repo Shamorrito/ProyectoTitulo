@@ -3,11 +3,9 @@
 [ext_resource type="Script" path="res://Scenes/PantallaDerrota/Script_PantallaDerrota.gd" id="1_wf8kw"]
 [ext_resource type="FontFile" uid="uid://bu74tn1pecc8h" path="res://Assets/Fonts/Bauhaus 93 Regular.ttf" id="2_0v2el"]
 [ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="2_12lwy"]
+[ext_resource type="Texture2D" uid="uid://c2b87v05ta6yh" path="res://Assets/IMG_Pantallas/PantallaDerrota.jpg" id="2_dle61"]
 [ext_resource type="FontFile" uid="uid://dykynqb43j6yr" path="res://Assets/Fonts/ARIAL.TTF" id="4_vk7by"]
 [ext_resource type="AudioStream" uid="uid://c7ncyyk6xenda" path="res://Assets/Audio/Derrota.mp3" id="5_ex8d8"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vegd0"]
-load_path = "res://.godot/imported/PantallaDerrota.jpg-8ae0e77bb6d545b9b07b2084cd487782.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6spk2"]
 bg_color = Color(0.54902, 0, 0, 1)
@@ -73,11 +71,11 @@ script = ExtResource("1_wf8kw")
 
 [node name="ReqDuelBG" type="TextureRect" parent="."]
 modulate = Color(0.393086, 0.393086, 0.393085, 1)
+top_level = true
 z_index = -1
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("CompressedTexture2D_vegd0")
-metadata/_edit_lock_ = true
+texture = ExtResource("2_dle61")
 
 [node name="BtnDerrota" type="Button" parent="."]
 z_index = 1
