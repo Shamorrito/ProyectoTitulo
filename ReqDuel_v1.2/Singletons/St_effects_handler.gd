@@ -33,14 +33,14 @@ func on_CardWaiting(card):
 		else:
 			mainScene.get_node("Deck/CardCount").text = "%d cartas"%(len(ogList))
 			
-		ataque = ("M13 -> %s" %[card.ID])
+		ataque = ("M12 -> %s" %[card.ID])
 		St_GlobalSignals.Puntaje[turno]["MitigacionesJugadas"].append(ataque)
 	mainScene.get_node("CardSelector").queue_free()
 	mainScene.get_node("Overlay").visible = false
 	for cartas in get_tree().get_nodes_in_group("solution_cards"):
-		cartas.M13_act = false
+		cartas.M12_act = false
 	for cartas in get_tree().get_nodes_in_group("cards"):
-		cartas.M13_act = false
+		cartas.M12_act = false
 
 func executeEffect (card, stake):
 	match card.ID:
@@ -72,25 +72,28 @@ func executeEffect (card, stake):
 		"M10":
 			get_tree().root.get_node("MetroLevel/UI").M10_act = true
 		"M11":
-			pass
-		"M12":
 			if stake.parche == 0:
 				stake.parche = stake.parche + 1
-				$Mensaje.visible = true
-				$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
+				get_tree().root.get_node("MetroLevel/Mensaje").text = "Stakeholder Satisfecho Parcialmente"
+				get_tree().root.get_node("MetroLevel/Mensaje").visible = true
+				await get_tree().create_timer(3).timeout  # Espera 2 segundos
+				get_tree().root.get_node("MetroLevel/Mensaje").visible = false  # Esto hará que el Label sea invisible
+				print("m11 A")
 			elif stake.parche == 1:
 				get_tree().root.get_node("MetroLevel/EnemySlots").card_Exited(stake)
 				stake.queue_free()
-				$Mensaje.visible = true
-				$Mensaje.text = "Stakeholder Satisfecho Totalmente"
+				get_tree().root.get_node("MetroLevel/Mensaje").text = "Stakeholder Satisfecho Parcialmente"
+				get_tree().root.get_node("MetroLevel/Mensaje").visible = true
+				await get_tree().create_timer(3).timeout  # Espera 2 segundos
+				get_tree().root.get_node("MetroLevel/Mensaje").visible = false  # Esto hará que el Label sea invisible
 			
-		"M13":
+		"M12":
 			var cardSelector = cardSelectorPre.instantiate()
 			var mainScene = get_tree().current_scene
 			for cartas in get_tree().get_nodes_in_group("solution_cards"):
-				cartas.M13_act = true
+				cartas.M12_act = true
 			for cartas in get_tree().get_nodes_in_group("cards"):
-				cartas.M13_act = true
+				cartas.M12_act = true
 			mainScene.get_node("Overlay").visible = true
 			mainScene.add_child(cardSelector)
 			mainScene.get_node("CardSelector").drawCard()
@@ -101,8 +104,8 @@ func executeEffect (card, stake):
 				mainScene.cardsList.append(cartas)
 			St_GlobalSignals.CardWaiting.connect(on_CardWaiting)
 			
-		"M14":
+		"M13":
 			for cartas in get_tree().get_nodes_in_group("solution_cards"):
 				if cartas.type != "Mitigacion":
 					cartas.cost = cartas.cost - 1
-					cartas.M14_act = true
+					cartas.M13_act = true

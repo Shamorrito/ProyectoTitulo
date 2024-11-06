@@ -95,9 +95,9 @@ texture = ExtResource("2_a20cs")
 [node name="BtnVictoria" type="Button" parent="."]
 z_index = 1
 offset_left = 704.0
-offset_top = 880.0
+offset_top = 928.0
 offset_right = 1216.0
-offset_bottom = 976.0
+offset_bottom = 1024.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
@@ -111,9 +111,9 @@ text = "Volver al Inicio"
 
 [node name="Titulo" type="Label" parent="."]
 offset_left = 512.0
-offset_top = 64.0
+offset_top = 32.0
 offset_right = 1408.0
-offset_bottom = 320.0
+offset_bottom = 288.0
 theme_override_fonts/font = SubResource("FontVariation_v8xql")
 theme_override_font_sizes/font_size = 200
 text = "REQ DUEL"
@@ -124,7 +124,7 @@ vertical_alignment = 1
 offset_left = 120.0
 offset_top = 312.0
 offset_right = 904.0
-offset_bottom = 712.0
+offset_bottom = 776.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_l3l8r")
 theme_override_font_sizes/font_size = 50
@@ -141,13 +141,25 @@ autowrap_mode = 3
 offset_left = 1016.0
 offset_top = 312.0
 offset_right = 1800.0
-offset_bottom = 712.0
+offset_bottom = 776.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_l3l8r")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ow858")
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="PuntosExtra" type="Label" parent="BoxPuntaje"]
+offset_left = 8.0
+offset_top = 392.0
+offset_right = 776.0
+offset_bottom = 458.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_l3l8r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c2p36")
+text = "Victoria: +1000 Puntos!"
+horizontal_alignment = 1
 
 [node name="UsuariosSatisfechos" type="Label" parent="BoxPuntaje"]
 layout_mode = 0
@@ -229,9 +241,9 @@ horizontal_alignment = 1
 
 [node name="PuntajeTotal" type="Label" parent="."]
 offset_left = 576.0
-offset_top = 760.0
+offset_top = 808.0
 offset_right = 1344.0
-offset_bottom = 837.0
+offset_bottom = 885.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_l3l8r")
 theme_override_font_sizes/font_size = 50

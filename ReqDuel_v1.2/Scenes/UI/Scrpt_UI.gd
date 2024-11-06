@@ -3,6 +3,7 @@ var budgetMax: int
 var budgetCurrent: int
 var day: int
 var M10_act = false
+
 func _ready():
 	budgetCurrent = 3
 	budgetMax = 3

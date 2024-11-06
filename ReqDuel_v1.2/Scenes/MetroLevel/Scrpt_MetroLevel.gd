@@ -26,7 +26,7 @@ func _ready():
 	chooseEnemy()
 	
 func dealCard(): #robar carta nueva
-	if len(cardsList) > 0 && ($CardSlots.cardsOnPlay) <= 11:
+	if len(cardsList) > 0 && ($CardSlots.cardsOnPlay) <= 11 && $UI.day <= 10:
 		var turno = "Turno " + str($UI.day)  # Esto construye "Turno 1")
 		var dealed = cardsList.pop_at(randi_range(0, len(cardsList)-1))
 		var card_data = St_GlobalSignals.card_data[dealed]
@@ -54,7 +54,7 @@ func dealCard(): #robar carta nueva
 			$Deck/CardCount.text = "%d cartas"%(len(cardsList))
 
 func chooseEnemy():
-	if  len(enemycardsList) > 0 && ($EnemySlots.cardsOnPlay) <= 4:
+	if  len(enemycardsList) > 0 && ($EnemySlots.cardsOnPlay) <= 4 && $UI.day <= 10:
 		var turno = "Turno " + str($UI.day)  # Esto construye "Turno 1")
 		var dealed = enemycardsList.pop_at(randi_range(0, len(enemycardsList)-1))
 		var card_data = St_GlobalSignals.enemy_card_data[dealed]
@@ -86,11 +86,10 @@ func on_PassTurnButtonPressed(): #Trigger para repartir carta
 				$Tablero.modulate = Color(1, 0.478, 0.41, 0.384)
 				CartaUrgente = true
 			if card.cost == 1 && card.M09_act != true:
-				#para Debug, comentar cambiando get_tree()+break, por pass 
+				#para Debug, comentar cambiando get_tree()+break, por pass
 				#pass
 				get_tree().change_scene_to_file("res://Scenes/PantallaDerrota/SC_PantallaDerrota.tscn")
 				break
-				
 	chooseEnemy()
 	if $UI.day < 10:
 		for i in range(2):
@@ -129,10 +128,6 @@ func Attack(solucion,stakeholder):
 		# Acciones a realizar si la carta está en el array de parches
 		if stakeholder.parche == 0:
 			$SolucionParcial.play()
-			$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
-			$Mensaje.visible = true
-			await get_tree().create_timer(3).timeout  # Espera 2 segundos
-			$Mensaje.visible = false  # Esto hará que el Label sea invisible
 			St_GlobalSignals.Puntaje["Puntos"]["parches"] += 1
 			ataque = ("%s -> %s = Parche" %[solucion.ID, stakeholder.ID])
 			St_GlobalSignals.Puntaje[turno]["Ataques"].append(ataque)
@@ -142,6 +137,10 @@ func Attack(solucion,stakeholder):
 			solucion.placing = "graveyard"
 			selectedCard = null
 			cartaAtacada = null
+			$Mensaje.text = "Stakeholder Satisfecho Parcialmente"
+			$Mensaje.visible = true
+			await get_tree().create_timer(3).timeout  # Espera 2 segundos
+			$Mensaje.visible = false  # Esto hará que el Label sea invisible
 		elif stakeholder.parche == 1:
 			$SolucionTotal.play()
 			St_GlobalSignals.Puntaje["Puntos"]["parchadas"] += 1
@@ -185,7 +184,7 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 		for cartas in get_tree().get_nodes_in_group("solution_cards"):
 			cartas.get_node("CardSprite/Outline").visible = false
 
-		if card.ID in ["M02","M05","M08","M09","M10","M11","M13","M14"]:
+		if card.ID in ["M02","M05","M08","M09","M10","M12","M13"]:
 			if  $UI.budgetCurrent >= card.cost:
 				$UI.budgetCurrent = $UI.budgetCurrent - card.cost
 				St_EffectsHandler.executeEffect(card,null)
@@ -197,7 +196,7 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 						if cartas.placing == "graveyard":
 							cartas.en_graveyard()
 				card.placing = "graveyard"
-				if card.ID != "M13":
+				if card.ID != "M12":
 					ataque = ("%s" %[card.ID])
 					St_GlobalSignals.Puntaje[turno]["MitigacionesJugadas"].append(ataque)
 				selectedCard= null
@@ -259,5 +258,3 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
-
-

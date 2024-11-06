@@ -23,8 +23,7 @@ func _on_btn_name_input_pressed():
 	else:
 		$InputNuevoJugador.clear()
 		$InputNuevoJugador.placeholder_text = \"Porfavor, elige un nombre adecuado\"
-		print(\"no, \\\"\", NuevoJugador, \"\\\"\")
-"
+		print(\"no, \\\"\", NuevoJugador, \"\\\"\")"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4tfp"]
 bg_color = Color(0, 0.470588, 0.470588, 1)

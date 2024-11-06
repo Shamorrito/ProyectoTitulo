@@ -12,27 +12,27 @@ var time = Time.get_datetime_dict_from_system()
 var Fecha = ("%s/%s/%s" %[time.day, time.month, time.year])
 
 func _ready():
-	$SonidoVictoria.play()
+	$SonidoDerrota.play()
 	resueltas = St_GlobalSignals.Puntaje["Puntos"]["resueltas"]
 	parches = St_GlobalSignals.Puntaje["Puntos"]["parches"]
 	incorrectas = St_GlobalSignals.Puntaje["Puntos"]["incorrectas"]
 	parchadas = St_GlobalSignals.Puntaje["Puntos"]["parchadas"]
 	sinSolucion = St_GlobalSignals.Puntaje["Puntos"]["sinSolucion"]
+	diasTranscurridos = St_GlobalSignals.Puntaje["Puntos"]["diasTranscurridos"]
 	mitigaciones = St_GlobalSignals.Puntaje["Puntos"]["mitigaciones"]
-	puntaje = (parches*100+resueltas*300+parchadas*100-incorrectas*50)
+	puntaje = (parches*100+resueltas*300+parchadas*100-incorrectas*50+diasTranscurridos*50)
 	
 	$BoxPuntaje/UsuariosSatisfechos.text = "Usuarios Satisfechos: %d" %(resueltas+parchadas)	
 	$BoxPuntaje/CartasUtilizadas.text = "Cartas Utilizadas: %d" %(parches+resueltas+parchadas+incorrectas)
 	$BoxPuntaje/CartasSinEfecto.text = "Cartas Sin Efecto: %d" %incorrectas
 	$BoxPuntaje/SolucionesParciales.text = "Soluciones Parciales: %d" %(parches+parchadas)
 	$BoxPuntaje/SolucionesTotales.text = "Soluciones Inmediatas: %d" %resueltas
-	$BoxPuntaje/MitigacionesUsadas.text = "Mitigaciones Usadas: %d" %mitigaciones
+	$BoxPuntaje/DiasTranscurridos.text = "Dias Transcurridos: %d" %diasTranscurridos
+	$PuntajeTotal.text = "Puntaje Total: %d" %puntaje
 	
-	$PuntajeTotal.text = "Puntaje Total: %d" %(parches*100+resueltas*300+parchadas*100-incorrectas*50)
 	export_puntaje_to_csv()
 
-
-func _on_btn_victoria_pressed():
+func _on_btn_derrota_pressed():
 	get_tree().change_scene_to_file("res://Scenes/TitleScreen/SC_TitleScreen.tscn")
 
 func export_puntaje_to_csv():

@@ -19,8 +19,8 @@ var newTexture = load("res://Assets/IMG_Templates/Template_Solucion.png")
 var textureParche = load("res://Assets/IMG_Templates/Template_Stakeholder_P.png")
 var textureMitigacion = load("res://Assets/IMG_Templates/Template_Mitigacion.png")
 var M09_act = false
-var M14_act = false
 var M13_act = false
+var M12_act = false
 
 # Actualiza la flecha para que siga el ratón mientras se selecciona el objetivo
 func _ready():
@@ -50,7 +50,7 @@ func _process(_delta):
 		$CardSprite.texture = textureParche
 
 func _on_area_card_input_event(_viewport, event, _shape_idx): #detección de click sobre la carta para seleccionarla
-	if placing != "waiting" and M13_act == false and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if placing != "waiting" and M12_act == false and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			St_GlobalSignals.CardSelected.emit(self)
 		else:
@@ -61,17 +61,17 @@ func _on_area_card_input_event(_viewport, event, _shape_idx): #detección de cli
 			St_GlobalSignals.CardWaiting.emit(self)
 	
 func _on_area_card_mouse_entered(): #detección de mouse hovering hacia la carta
-	if placing != "graveyard" and M13_act == false:
+	if placing != "graveyard" and M12_act == false:
 		$CardSprite/Description.visible = true
 
 func _on_area_card_mouse_exited(): #detección de mouse hovering fuera de la carta
-	if M13_act == false:
+	if M12_act == false:
 		$CardSprite/Description.visible = false
 	
 func on_PassTurnButtonPressed(): #Trigger para repartir carta
-	if M14_act:
+	if M13_act:
 		cost = cost + 1
-		M14_act = false
+		M13_act = false
 	if (type == "Stakeholder"):
 		if (M09_act):
 			$CardSprite/Cost.text = "%d"%cost
