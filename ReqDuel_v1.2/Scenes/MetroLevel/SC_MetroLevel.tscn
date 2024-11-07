@@ -43,6 +43,13 @@ offset_bottom = 1080.0
 texture = ExtResource("2_uokse")
 metadata/_edit_lock_ = true
 
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+z_index = 6
+offset_right = 1920.0
+offset_bottom = 1088.0
+color = Color(0, 0, 0, 0.752941)
+
 [node name="Tablero" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.384314)
 z_index = 2
@@ -68,13 +75,6 @@ vertical_alignment = 1
 [node name="UI" parent="." instance=ExtResource("3_2kus1")]
 z_index = 3
 position = Vector2(1768, 386)
-
-[node name="Overlay" type="ColorRect" parent="."]
-visible = false
-z_index = 6
-offset_right = 1920.0
-offset_bottom = 1088.0
-color = Color(0, 0, 0, 0.752941)
 
 [node name="Deck" type="Sprite2D" parent="."]
 z_index = 1
@@ -154,12 +154,9 @@ z_index = 3
 position = Vector2(832, 224)
 
 [node name="BotonAyuda" parent="." instance=ExtResource("2_7anm3")]
-visible = false
 z_index = 20
-position = Vector2(64, 40)
 
 [node name="Mitigacion" type="AudioStreamPlayer2D" parent="."]
-visible = false
 stream = ExtResource("9_5h0s1")
 
 [node name="SinEfecto" type="AudioStreamPlayer2D" parent="."]

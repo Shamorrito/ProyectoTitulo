@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c370rvm21bnep"]
+[gd_scene load_steps=14 format=3 uid="uid://c370rvm21bnep"]
 
 [ext_resource type="Script" path="res://Scenes/BotonAyuda/BotonAyuda.gd" id="1_yo6am"]
 [ext_resource type="FontFile" uid="uid://c8hbdvi0h5ga5" path="res://Assets/Fonts/BAUHS93.ttf" id="2_3m7r3"]
+[ext_resource type="FontFile" uid="uid://ca7fwybyve5qb" path="res://Assets/Fonts/ARIALBD.TTF" id="3_70lr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwj7g"]
+bg_color = Color(0, 0, 0, 0.588235)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rirot"]
 bg_color = Color(0.0509804, 0.34902, 0.14902, 1)
@@ -28,10 +32,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7icg"]
-bg_color = Color(0.823636, 0.000533289, 0.82363, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f5kh"]
-bg_color = Color(0.0327394, 0, 0.868446, 1)
+bg_color = Color(0.101023, 0.49625, 0.252097, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -46,41 +47,162 @@ corner_radius_bottom_left = 50
 bg_color = Color(6.59391e-06, 0.715961, 0.400697, 1)
 border_width_left = 10
 border_width_top = 10
-border_color = Color(0, 0.634182, 0.548346, 1)
+border_color = Color(0, 0, 0.54902, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbkv6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6egql"]
+bg_color = Color(1, 0.347823, 0.2314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3txn"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47amw"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp0r1"]
+bg_color = Color(0, 0, 1, 1)
+
 [node name="BotonAyuda" type="Node2D"]
+position = Vector2(40, 24)
 script = ExtResource("1_yo6am")
 
-[node name="BotonAyuda" type="Button" parent="."]
-z_index = 20
-z_as_relative = false
+[node name="AyudaOverlay" type="Label" parent="."]
+visible = false
+z_index = 1
+offset_left = -40.0
+offset_top = -24.0
+offset_right = 1880.0
+offset_bottom = 1056.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwj7g")
+metadata/_edit_lock_ = true
+
+[node name="BtnAyuda" type="Button" parent="."]
+z_index = 50
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 120.0
 offset_bottom = 120.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.758192, 0.758192, 0.758192, 1)
+focus_mode = 0
+theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.423651, 0.423651, 0.423651, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_3m7r3")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_rirot")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3tuf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y7icg")
-theme_override_styles/focus = SubResource("StyleBoxFlat_8f5kh")
 toggle_mode = true
 text = "i"
 
-[node name="Label" type="Label" parent="."]
+[node name="MenuAyuda" type="Label" parent="BtnAyuda"]
+visible = false
 z_index = 1
-offset_left = 128.0
+offset_left = 16.0
 offset_top = 128.0
-offset_right = 640.0
-offset_bottom = 768.0
+offset_right = 400.0
+offset_bottom = 896.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_v0bdo")
 
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="AyudaInicio" type="Label" parent="BtnAyuda/MenuAyuda"]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 1536.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbkv6")
+text = "este es tu menú de ayuda, puedes consultarlo en cualquier momento de la partida!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AyudaObjetivo" type="Button" parent="BtnAyuda/MenuAyuda"]
+z_index = 2
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 160.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
+toggle_mode = true
+text = "OBJETIVO"
+
+[node name="LabelObjetivo" type="Label" parent="BtnAyuda/MenuAyuda/AyudaObjetivo"]
+visible = false
+z_index = 3
+offset_left = 368.0
+offset_top = -32.0
+offset_right = 1504.0
+offset_bottom = 736.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3txn")
+
+[node name="AyudaSolucion" type="Button" parent="BtnAyuda/MenuAyuda"]
+z_index = 2
+offset_left = 32.0
+offset_top = 176.0
+offset_right = 352.0
+offset_bottom = 304.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
+toggle_mode = true
+text = "CARTAS DE
+SOLUCIÓN"
+
+[node name="LabelSolucion" type="Label" parent="BtnAyuda/MenuAyuda/AyudaSolucion"]
+visible = false
+z_index = 3
+offset_left = 368.0
+offset_top = -176.0
+offset_right = 1504.0
+offset_bottom = 592.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_47amw")
+
+[node name="AyudaMitigacion" type="Button" parent="BtnAyuda/MenuAyuda"]
+z_index = 2
+offset_left = 32.0
+offset_top = 320.0
+offset_right = 352.0
+offset_bottom = 448.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
+toggle_mode = true
+text = "CARTAS DE
+MITIGACIÓN"
+
+[node name="LabelMitigacion" type="Label" parent="BtnAyuda/MenuAyuda/AyudaMitigacion"]
+visible = false
+z_index = 3
+offset_left = 368.0
+offset_top = -320.0
+offset_right = 1504.0
+offset_bottom = 448.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp0r1")
+
+[connection signal="toggled" from="BtnAyuda" to="." method="_on_btn_ayuda_toggled"]
+[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaObjetivo" to="." method="_on_ayuda_objetivo_toggled"]
+[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaSolucion" to="." method="_on_ayuda_solucion_toggled"]
+[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaMitigacion" to="." method="_on_ayuda_mitigacion_toggled"]

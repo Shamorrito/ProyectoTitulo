@@ -8,4 +8,5 @@ z_index = 6
 script = ExtResource("1_r0kgk")
 
 [node name="CardSlots" parent="." instance=ExtResource("2_0sbbl")]
+z_index = 1
 position = Vector2(928, 544)

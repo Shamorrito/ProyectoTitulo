@@ -36,7 +36,6 @@ func dealCard(): #robar carta nueva
 		new_card.ID = dealed
 		# Datos a agregar
 		var nueva_solucion = "Solucion X"  # Puede ser cualquier tipo de dato: string, int, etc.
-		#new_card.Imagen = card_data["cardImage"]
 		new_card.cardName = card_data["cardName"]
 		new_card.cost = card_data["cost"]
 		new_card.description = card_data["description"]
@@ -258,3 +257,4 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
+
