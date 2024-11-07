@@ -112,9 +112,9 @@ var card_data = {
 	"M08": {"cardImage": "res://Assets/IMG/Mitigacion/M08.png", "cardName": "Capacitación Rápida", "cost": 4, "type": "Mitigacion", "description": "Aumenta la paciencia de todos los Stakeholders activos en 1 punto."},
 	"M09": {"cardImage": "res://Assets/IMG/Mitigacion/M09.png", "cardName": "Refuerzo Temporal", "cost": 5, "type": "Mitigacion", "description": "Añade un turno adicional antes de quese reduzca la paciencia de todos los Stakeholders actuales."},
 	"M10": {"cardImage": "res://Assets/IMG/Mitigacion/M10.png", "cardName": "Fondos Extraordinarios", "cost": 3, "type": "Mitigacion", "description": "Aumenta el presupuesto disponible para el siguiente turno en $3."},
-	"M11": {"cardImage": "res://Assets/IMG/Mitigacion/M12.png", "cardName": "Iniciativa de Comunidad", "cost": 2, "type": "Mitigacion", "description": "Satisface parcialmente un stakeholder a elección."},
-	"M12": {"cardImage": "res://Assets/IMG/Mitigacion/M13.png", "cardName": "Segunda Opcion", "cost": 5, "type": "Mitigacion", "description": "Saca 3 cartas de solución, 1 de las cartas es una solución inmediata a un stakeholder en juego."},
-	"M13": {"cardImage": "res://Assets/IMG/Mitigacion/M14.png", "cardName": "Cotización", "cost": 3, "type": "Mitigacion", "description": "Reduce el costo de todas las soluciones durante este turno en $1."}
+	"M11": {"cardImage": "res://Assets/IMG/Mitigacion/M11.png", "cardName": "Iniciativa de Comunidad", "cost": 2, "type": "Mitigacion", "description": "Satisface parcialmente un stakeholder a elección."},
+	"M12": {"cardImage": "res://Assets/IMG/Mitigacion/M12.png", "cardName": "Segunda Opcion", "cost": 5, "type": "Mitigacion", "description": "Saca 3 cartas de solución, 1 de las cartas es una solución inmediata a un stakeholder en juego."},
+	"M13": {"cardImage": "res://Assets/IMG/Mitigacion/M13.png", "cardName": "Cotización", "cost": 3, "type": "Mitigacion", "description": "Reduce el costo de todas las soluciones durante este turno en $1."}
 }
 var enemy_card_data = {
 	"Q01": {

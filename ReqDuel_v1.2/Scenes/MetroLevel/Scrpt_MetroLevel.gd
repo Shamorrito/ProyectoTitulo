@@ -25,6 +25,7 @@ func _ready():
 		dealCard()
 	chooseEnemy()
 	
+	
 func dealCard(): #robar carta nueva
 	if len(cardsList) > 0 && ($CardSlots.cardsOnPlay) <= 11 && $UI.day <= 10:
 		var turno = "Turno " + str($UI.day)  # Esto construye "Turno 1")
@@ -257,4 +258,3 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
-

@@ -45,7 +45,7 @@ metadata/_edit_lock_ = true
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
-z_index = 6
+z_index = 99
 offset_right = 1920.0
 offset_bottom = 1088.0
 color = Color(0, 0, 0, 0.752941)
@@ -74,7 +74,7 @@ vertical_alignment = 1
 
 [node name="UI" parent="." instance=ExtResource("3_2kus1")]
 z_index = 3
-position = Vector2(1768, 386)
+position = Vector2(1760, 368)
 
 [node name="Deck" type="Sprite2D" parent="."]
 z_index = 1
@@ -154,7 +154,7 @@ z_index = 3
 position = Vector2(832, 224)
 
 [node name="BotonAyuda" parent="." instance=ExtResource("2_7anm3")]
-z_index = 20
+z_index = 9
 
 [node name="Mitigacion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_5h0s1")

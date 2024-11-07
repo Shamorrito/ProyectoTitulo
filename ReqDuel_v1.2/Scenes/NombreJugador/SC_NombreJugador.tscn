@@ -23,7 +23,8 @@ func _on_btn_name_input_pressed():
 	else:
 		$InputNuevoJugador.clear()
 		$InputNuevoJugador.placeholder_text = \"Porfavor, elige un nombre adecuado\"
-		print(\"no, \\\"\", NuevoJugador, \"\\\"\")"
+		print(\"no, \\\"\", NuevoJugador, \"\\\"\")
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4tfp"]
 bg_color = Color(0, 0.470588, 0.470588, 1)
@@ -75,7 +76,17 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tiylm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijt0s"]
+bg_color = Color(0.752941, 0.501961, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.67451, 0.423529, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="ScNombreJugador" type="Node2D"]
 script = SubResource("GDScript_uo3nw")
@@ -93,6 +104,7 @@ offset_left = 736.0
 offset_top = 656.0
 offset_right = 1184.0
 offset_bottom = 752.0
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.501961, 0.501961, 0.501961, 1)
 theme_override_colors/font_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
@@ -109,11 +121,12 @@ offset_left = 384.0
 offset_top = 448.0
 offset_right = 1536.0
 offset_bottom = 576.0
+focus_mode = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m7ftc")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_1cadx")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tiylm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ijt0s")
 placeholder_text = "Ingresa tu nombre aquí"
 alignment = 1
 shortcut_keys_enabled = false

@@ -44,13 +44,10 @@ func actualizarPagina():
 	# Actualiza la visibilidad de los botones
 	$BtnPrevPage.visible = numeroPagina > 1
 	$BtnNextPage.visible = numeroPagina < maxPagina
-	
 
 func _on_hitbox_mouse_entered():
 	$Ayuda_Pagina2/Ejemplo_Normal/Description.visible = true
 	$Ayuda_Pagina3/Ejemplo_Parcial/Description.visible = true
-
-
 func _on_hitbox_mouse_exited():
 	$Ayuda_Pagina2/Ejemplo_Normal/Description.visible = false
 	$Ayuda_Pagina3/Ejemplo_Parcial/Description.visible = false

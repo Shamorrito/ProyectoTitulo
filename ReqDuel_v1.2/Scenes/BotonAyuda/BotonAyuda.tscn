@@ -1,14 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://c370rvm21bnep"]
+[gd_scene load_steps=24 format=3 uid="uid://c370rvm21bnep"]
 
 [ext_resource type="Script" path="res://Scenes/BotonAyuda/BotonAyuda.gd" id="1_yo6am"]
 [ext_resource type="FontFile" uid="uid://c8hbdvi0h5ga5" path="res://Assets/Fonts/BAUHS93.ttf" id="2_3m7r3"]
 [ext_resource type="FontFile" uid="uid://ca7fwybyve5qb" path="res://Assets/Fonts/ARIALBD.TTF" id="3_70lr4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwj7g"]
-bg_color = Color(0, 0, 0, 0.588235)
+[ext_resource type="StyleBox" uid="uid://dgyd0d2on5ly7" path="res://Scenes/BotonAyuda/BotonAyuda1.tres" id="4_wd5jh"]
+[ext_resource type="StyleBox" uid="uid://c5h50ddurig5k" path="res://Scenes/BotonAyuda/BotonAyuda2.tres" id="5_kkua4"]
+[ext_resource type="StyleBox" uid="uid://biunh1uynwkua" path="res://Scenes/BotonAyuda/BotonAyuda3.tres" id="6_32ybe"]
+[ext_resource type="Texture2D" uid="uid://fg6li552oj4w" path="res://Assets/IMG_UI/Calendario.png" id="7_vaq8s"]
+[ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="8_ymbnk"]
+[ext_resource type="Texture2D" uid="uid://iibgyskr1jxg" path="res://Assets/IMG_Templates/Template_Solucion.png" id="9_hcmoh"]
+[ext_resource type="Texture2D" uid="uid://w22jdof615lq" path="res://Assets/IMG/Respuesta/A00.png" id="10_x6m1d"]
+[ext_resource type="Texture2D" uid="uid://dfc6o3gv3copx" path="res://Assets/IMG_Templates/Template_Mitigacion.png" id="11_8xbe6"]
+[ext_resource type="Texture2D" uid="uid://c5tm7xijhoq6i" path="res://Assets/IMG/Mitigacion/M00.jpg" id="12_qpb7b"]
+[ext_resource type="Texture2D" uid="uid://dchpnfxrwlnr2" path="res://Assets/IMG_Templates/Template_Stakeholder.png" id="13_3kyhr"]
+[ext_resource type="Texture2D" uid="uid://b3ak2iqhclma2" path="res://Assets/IMG/Pregunta/Q00.jpg" id="14_a283v"]
+[ext_resource type="Texture2D" uid="uid://cae2fsqi7wf01" path="res://Assets/IMG_Templates/Template_Stakeholder_P.png" id="15_ltiyj"]
+[ext_resource type="Texture2D" uid="uid://bg6bo88i5g4d2" path="res://Assets/IMG_UI/Presupuesto.png" id="16_5w1vq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rirot"]
-bg_color = Color(0.0509804, 0.34902, 0.14902, 1)
+bg_color = Color(0.156863, 0.509804, 0.27451, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -20,7 +30,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tuf6"]
-bg_color = Color(0.0509804, 0.309804, 0.14902, 1)
+bg_color = Color(0.156863, 0.392157, 0.235294, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -32,7 +42,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7icg"]
-bg_color = Color(0.101023, 0.49625, 0.252097, 1)
+bg_color = Color(0.0784314, 0.313726, 0.156863, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -43,51 +53,55 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0bdo"]
-bg_color = Color(6.59391e-06, 0.715961, 0.400697, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_625ud"]
+bg_color = Color(0, 0.470588, 0.470588, 1)
 border_width_left = 10
 border_width_top = 10
-border_color = Color(0, 0, 0.54902, 1)
+border_color = Color(0, 0.392157, 0.392157, 1)
 corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbkv6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6egql"]
-bg_color = Color(1, 0.347823, 0.2314, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
+bg_color = Color(0, 0.470588, 0.470588, 1)
+border_width_top = 10
+border_color = Color(0, 0.392157, 0.392157, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3txn"]
-bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47amw"]
-bg_color = Color(0, 1, 0, 1)
+content_margin_left = 20.0
+content_margin_top = 30.0
+content_margin_right = 20.0
+bg_color = Color(0, 0.470588, 0.470588, 1)
+border_width_top = 10
+border_color = Color(0, 0.392157, 0.392157, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp0r1"]
-bg_color = Color(0, 0, 1, 1)
+content_margin_left = 20.0
+content_margin_top = 30.0
+content_margin_right = 20.0
+bg_color = Color(0, 0.470588, 0.470588, 1)
+border_width_top = 10
+border_color = Color(0, 0.392157, 0.392157, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
 
 [node name="BotonAyuda" type="Node2D"]
+z_index = 1
 position = Vector2(40, 24)
 script = ExtResource("1_yo6am")
 
-[node name="AyudaOverlay" type="Label" parent="."]
+[node name="AyudaOverlay" type="ColorRect" parent="."]
 visible = false
-z_index = 1
+z_index = 6
 offset_left = -40.0
 offset_top = -24.0
 offset_right = 1880.0
-offset_bottom = 1056.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_jwj7g")
+offset_bottom = 1064.0
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 0.752941)
 metadata/_edit_lock_ = true
 
 [node name="BtnAyuda" type="Button" parent="."]
@@ -97,9 +111,9 @@ offset_top = 8.0
 offset_right = 120.0
 offset_bottom = 120.0
 focus_mode = 0
-theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.423651, 0.423651, 0.423651, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_3m7r3")
 theme_override_font_sizes/font_size = 50
@@ -108,21 +122,32 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3tuf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y7icg")
 toggle_mode = true
 text = "i"
+metadata/_edit_lock_ = true
 
 [node name="MenuAyuda" type="Label" parent="BtnAyuda"]
 visible = false
 z_index = 1
-offset_left = 16.0
-offset_top = 128.0
-offset_right = 400.0
-offset_bottom = 896.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_v0bdo")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.857
+anchor_top = 1.429
+anchor_right = 1.857
+anchor_bottom = 1.429
+offset_left = 0.0159912
+offset_top = -128.048
+offset_right = 336.016
+offset_bottom = 831.952
+theme_override_styles/normal = SubResource("StyleBoxFlat_625ud")
+metadata/_edit_lock_ = true
 
 [node name="AyudaInicio" type="Label" parent="BtnAyuda/MenuAyuda"]
-layout_mode = 0
-offset_left = 400.0
-offset_right = 1536.0
-offset_bottom = 768.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.905
+anchor_right = 0.905
+offset_left = -0.0800171
+offset_right = 1039.92
+offset_bottom = 960.0
 theme_override_fonts/font = ExtResource("3_70lr4")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_pbkv6")
@@ -130,79 +155,392 @@ text = "este es tu menú de ayuda, puedes consultarlo en cualquier momento de la
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+uppercase = true
 
 [node name="AyudaObjetivo" type="Button" parent="BtnAyuda/MenuAyuda"]
 z_index = 2
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 352.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.042
+anchor_right = 0.095
+anchor_bottom = 0.042
+offset_left = 0.079998
+offset_top = 23.68
+offset_right = 256.08
+offset_bottom = 151.68
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_70lr4")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
-toggle_mode = true
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("4_wd5jh")
+theme_override_styles/hover = ExtResource("5_kkua4")
+theme_override_styles/pressed = ExtResource("6_32ybe")
 text = "OBJETIVO"
 
 [node name="LabelObjetivo" type="Label" parent="BtnAyuda/MenuAyuda/AyudaObjetivo"]
 visible = false
 z_index = 3
-offset_left = 368.0
-offset_top = -32.0
-offset_right = 1504.0
-offset_bottom = 736.0
+layout_mode = 0
+offset_left = 272.0
+offset_top = -64.0
+offset_right = 1312.0
+offset_bottom = 896.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_d3txn")
+text = "Sobrevivir 10 días solucionando la mayor cantidad de problemas de los usuarios, entregandoles soluciones parciales o inmediatas, procurando que no pierdan la paciencia"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Calendario" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaObjetivo/LabelObjetivo"]
+z_index = 4
+position = Vector2(528, 608)
+scale = Vector2(0.623047, 0.628906)
+texture = ExtResource("7_vaq8s")
+
+[node name="Dias" type="Label" parent="BtnAyuda/MenuAyuda/AyudaObjetivo/LabelObjetivo/Calendario"]
+z_index = 4
+offset_left = -141.241
+offset_top = -190.807
+offset_right = 141.759
+offset_bottom = 127.193
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ymbnk")
+theme_override_font_sizes/font_size = 120
+text = "DIA
+10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AyudaSolucion" type="Button" parent="BtnAyuda/MenuAyuda"]
 z_index = 2
-offset_left = 32.0
-offset_top = 176.0
-offset_right = 352.0
-offset_bottom = 304.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.229
+anchor_right = 0.095
+anchor_bottom = 0.229
+offset_left = 0.079998
+offset_top = 20.16
+offset_right = 256.08
+offset_bottom = 148.16
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_70lr4")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
-toggle_mode = true
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("4_wd5jh")
+theme_override_styles/hover = ExtResource("5_kkua4")
+theme_override_styles/pressed = ExtResource("6_32ybe")
 text = "CARTAS DE
 SOLUCIÓN"
 
 [node name="LabelSolucion" type="Label" parent="BtnAyuda/MenuAyuda/AyudaSolucion"]
 visible = false
 z_index = 3
-offset_left = 368.0
-offset_top = -176.0
-offset_right = 1504.0
-offset_bottom = 592.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_47amw")
+offset_left = 272.0
+offset_top = -240.0
+offset_right = 1312.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp0r1")
+text = "Solucionan de forma parcial o total el problema del \"Stakeholder\"."
+horizontal_alignment = 3
+autowrap_mode = 2
+metadata/_edit_group_ = true
+
+[node name="CartaSolucion" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion"]
+z_index = 5
+position = Vector2(528, 552)
+scale = Vector2(0.344444, 0.344444)
+texture = ExtResource("9_hcmoh")
+
+[node name="A00" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion/CartaSolucion"]
+z_index = -1
+position = Vector2(0.000182152, -391.21)
+scale = Vector2(2.58065, 2.59985)
+texture = ExtResource("10_x6m1d")
+
+[node name="Precio" type="Label" parent="BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion/CartaSolucion"]
+offset_left = -46.4517
+offset_top = 69.6774
+offset_right = 31.5483
+offset_bottom = 226.677
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 140
+text = "1"
+
+[node name="Nombre" type="Label" parent="BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion/CartaSolucion"]
+offset_left = -418.0
+offset_top = 302.0
+offset_right = 418.0
+offset_bottom = 789.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 140
+text = "CARTA DE SOLUCION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="AyudaMitigacion" type="Button" parent="BtnAyuda/MenuAyuda"]
 z_index = 2
-offset_left = 32.0
-offset_top = 320.0
-offset_right = 352.0
-offset_bottom = 448.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.417
+anchor_right = 0.095
+anchor_bottom = 0.417
+offset_left = 0.079998
+offset_top = 15.68
+offset_right = 256.08
+offset_bottom = 143.68
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_70lr4")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_6egql")
-toggle_mode = true
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("4_wd5jh")
+theme_override_styles/hover = ExtResource("5_kkua4")
+theme_override_styles/pressed = ExtResource("6_32ybe")
 text = "CARTAS DE
 MITIGACIÓN"
 
 [node name="LabelMitigacion" type="Label" parent="BtnAyuda/MenuAyuda/AyudaMitigacion"]
 visible = false
 z_index = 3
-offset_left = 368.0
-offset_top = -320.0
-offset_right = 1504.0
-offset_bottom = 448.0
+layout_mode = 0
+offset_left = 272.0
+offset_top = -416.0
+offset_right = 1312.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_fp0r1")
+text = "Facilitan la resolución de probremas ofreciendo una variedad de bonificaciones."
+horizontal_alignment = 3
+autowrap_mode = 2
+metadata/_edit_group_ = true
+
+[node name="CartaMitigacion" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion"]
+z_index = 5
+position = Vector2(525, 566.667)
+scale = Vector2(0.35, 0.343056)
+texture = ExtResource("11_8xbe6")
+
+[node name="M00" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion/CartaMitigacion"]
+z_index = -1
+position = Vector2(6.10352e-05, -394.839)
+scale = Vector2(1.02877, 1.03643)
+texture = ExtResource("12_qpb7b")
+
+[node name="Precio" type="Label" parent="BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion/CartaMitigacion"]
+offset_left = -46.4517
+offset_top = 69.6774
+offset_right = 31.5483
+offset_bottom = 226.677
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 140
+text = "1"
+
+[node name="Nombre" type="Label" parent="BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion/CartaMitigacion"]
+offset_left = -418.0
+offset_top = 302.0
+offset_right = 418.0
+offset_bottom = 789.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 130
+text = "CARTA DE MITIGACIÓN"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AyudaStake" type="Button" parent="BtnAyuda/MenuAyuda"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.604
+anchor_right = 0.095
+anchor_bottom = 0.604
+offset_left = 0.079998
+offset_top = 12.16
+offset_right = 256.08
+offset_bottom = 140.16
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_wd5jh")
+theme_override_styles/hover = ExtResource("5_kkua4")
+theme_override_styles/pressed = ExtResource("6_32ybe")
+text = "STAKEHOLDER"
+
+[node name="LabelStake" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake"]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.062
+anchor_top = -3.625
+anchor_right = 1.062
+anchor_bottom = -3.625
+offset_left = 0.127991
+offset_top = -128.0
+offset_right = 1040.13
+offset_bottom = 832.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp0r1")
+text = "Los \"Stakeholders\" son los usuarios y trabajadores a los que debes ayudar, entregales soluciones de acuerdo a lo que necesitan."
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="CartaSH_N" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake"]
+z_index = 5
+position = Vector2(240, 568)
+scale = Vector2(0.296296, 0.288281)
+texture = ExtResource("13_3kyhr")
+
+[node name="Q00" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_N"]
+z_index = -1
+position = Vector2(6.10352e-05, -394.839)
+scale = Vector2(1.02877, 1.03643)
+texture = ExtResource("14_a283v")
+
+[node name="Paciencia" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_N"]
+offset_left = -46.4517
+offset_top = 69.6774
+offset_right = 31.5483
+offset_bottom = 226.677
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 140
+text = "5"
+
+[node name="Nombre" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_N"]
+offset_left = -418.0
+offset_top = 302.0
+offset_right = 418.0
+offset_bottom = 789.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 100
+text = "STAKEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Ejemplo1" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_N"]
+offset_left = -533.0
+offset_top = 999.0
+offset_right = 533.0
+offset_bottom = 1134.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 120
+text = "(Sin Solucionar)"
+horizontal_alignment = 1
+
+[node name="CartaSH_P" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake"]
+z_index = 5
+position = Vector2(752, 568)
+scale = Vector2(0.296574, 0.288863)
+texture = ExtResource("15_ltiyj")
+metadata/_edit_group_ = true
+
+[node name="Q00" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_P"]
+z_index = -1
+position = Vector2(6.10352e-05, -394.839)
+scale = Vector2(1.02877, 1.03643)
+texture = ExtResource("14_a283v")
+
+[node name="Paciencia" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_P"]
+offset_left = -46.4517
+offset_top = 69.6774
+offset_right = 31.5483
+offset_bottom = 226.677
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 140
+text = "4"
+
+[node name="Nombre" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_P"]
+offset_left = -418.0
+offset_top = 302.0
+offset_right = 418.0
+offset_bottom = 789.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 100
+text = "STAKEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Ejemplo2" type="Label" parent="BtnAyuda/MenuAyuda/AyudaStake/LabelStake/CartaSH_P"]
+offset_left = -533.0
+offset_top = 999.0
+offset_right = 533.0
+offset_bottom = 1134.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 120
+text = "(Solucion Parcial)"
+horizontal_alignment = 1
+
+[node name="AyudaPres" type="Button" parent="BtnAyuda/MenuAyuda"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.095
+anchor_top = 0.604
+anchor_right = 0.095
+anchor_bottom = 0.604
+offset_left = 0.079998
+offset_top = 188.16
+offset_right = 256.08
+offset_bottom = 316.16
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("4_wd5jh")
+theme_override_styles/hover = ExtResource("5_kkua4")
+theme_override_styles/pressed = ExtResource("6_32ybe")
+text = "PRESUPUESTO"
+
+[node name="LabelPres" type="Label" parent="BtnAyuda/MenuAyuda/AyudaPres"]
+visible = false
+z_index = 3
+offset_left = 272.0
+offset_top = -768.0
+offset_right = 1312.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_70lr4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fp0r1")
+text = "Las cartas de solución y mitigación tienen un costo asignado, juega bien tus cartas para no quedarte sin dinero!"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Presupuesto" type="Sprite2D" parent="BtnAyuda/MenuAyuda/AyudaPres/LabelPres"]
+position = Vector2(528, 512)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("16_5w1vq")
+
+[node name="PresTexto" type="Label" parent="BtnAyuda/MenuAyuda/AyudaPres/LabelPres/Presupuesto"]
+offset_left = -323.368
+offset_top = 13.4737
+offset_right = 195.632
+offset_bottom = 182.474
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_ymbnk")
+theme_override_font_sizes/font_size = 140
+text = "$3/$5"
 
 [connection signal="toggled" from="BtnAyuda" to="." method="_on_btn_ayuda_toggled"]
-[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaObjetivo" to="." method="_on_ayuda_objetivo_toggled"]
-[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaSolucion" to="." method="_on_ayuda_solucion_toggled"]
-[connection signal="toggled" from="BtnAyuda/MenuAyuda/AyudaMitigacion" to="." method="_on_ayuda_mitigacion_toggled"]
+[connection signal="pressed" from="BtnAyuda/MenuAyuda/AyudaObjetivo" to="." method="_on_ayuda_objetivo_pressed"]
+[connection signal="pressed" from="BtnAyuda/MenuAyuda/AyudaSolucion" to="." method="_on_ayuda_solucion_pressed"]
+[connection signal="pressed" from="BtnAyuda/MenuAyuda/AyudaMitigacion" to="." method="_on_ayuda_mitigacion_pressed"]
+[connection signal="pressed" from="BtnAyuda/MenuAyuda/AyudaStake" to="." method="_on_ayuda_stake_pressed"]
+[connection signal="pressed" from="BtnAyuda/MenuAyuda/AyudaPres" to="." method="_on_ayuda_pres_pressed"]

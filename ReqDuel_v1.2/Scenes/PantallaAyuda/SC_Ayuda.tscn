@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://ca7fwybyve5qb" path="res://Assets/Fonts/ARIALBD.TTF" id="3_iykjd"]
 [ext_resource type="FontFile" uid="uid://bpmafq01liqvp" path="res://Assets/Fonts/nulshock bd.otf" id="3_wuw1w"]
 [ext_resource type="Texture2D" uid="uid://dchpnfxrwlnr2" path="res://Assets/IMG_Templates/Template_Stakeholder.png" id="4_4vg6i"]
-[ext_resource type="Texture2D" uid="uid://b3ak2iqhclma2" path="res://Assets/Otros/Q00.jpg" id="5_avt3x"]
+[ext_resource type="Texture2D" uid="uid://b3ak2iqhclma2" path="res://Assets/IMG/Pregunta/Q00.jpg" id="5_avt3x"]
 [ext_resource type="Texture2D" uid="uid://cae2fsqi7wf01" path="res://Assets/IMG_Templates/Template_Stakeholder_P.png" id="6_kjny3"]
 [ext_resource type="Texture2D" uid="uid://fg6li552oj4w" path="res://Assets/IMG_UI/Calendario.png" id="6_umjxc"]
 [ext_resource type="Texture2D" uid="uid://bg6bo88i5g4d2" path="res://Assets/IMG_UI/Presupuesto.png" id="7_8w3to"]

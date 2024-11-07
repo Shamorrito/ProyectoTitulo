@@ -1,38 +1,52 @@
 extends Node2D
 
-signal btn_ayuda_toggled(toggled_on)  # Definir la señal
+@onready var ayudaActual: Label = $BtnAyuda/MenuAyuda/AyudaInicio
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaInicio
 
 func _on_btn_ayuda_toggled(toggled_on):
 	$BtnAyuda/MenuAyuda.visible = toggled_on  # Cambiar la visibilidad del menú de ayuda
 	if toggled_on:
+		for cartas in get_tree().get_nodes_in_group("solution_cards"):
+			cartas.M12_act = true
+		for cartas in get_tree().get_nodes_in_group("cards"):
+			cartas.M12_act = true
+		$BtnAyuda.text = "X"
+		ayudaActual = $BtnAyuda/MenuAyuda/AyudaInicio
+		ayudaActual.visible = true
 		$AyudaOverlay.visible = true
-		print("UNO")
 	else:
+		for cartas in get_tree().get_nodes_in_group("solution_cards"):
+			cartas.M12_act = false
+		for cartas in get_tree().get_nodes_in_group("cards"):
+			cartas.M12_act = false
+		$BtnAyuda.text = "i"
+		ayudaActual.visible = false
+		ayudaActual = $BtnAyuda/MenuAyuda/AyudaInicio
 		$AyudaOverlay.visible = false
-		print("DOS")
 
-func _on_ayuda_objetivo_toggled(toggled_on):
-	if toggled_on:
-		$BtnAyuda/MenuAyuda/AyudaObjetivo/LabelObjetivo.visible = true
-	else:
-		$BtnAyuda/MenuAyuda/AyudaObjetivo/LabelObjetivo.visible = false
+func _on_ayuda_objetivo_pressed():
+	ayudaActual.visible = false
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaObjetivo/LabelObjetivo
+	ayudaActual.visible = true
 
-func _on_ayuda_solucion_toggled(toggled_on):
-	if toggled_on:
-		$BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion.visible = true
-	else:
-		$BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion.visible = false
-		
-func _on_ayuda_mitigacion_toggled(toggled_on):
-	if toggled_on:
-		$BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion.visible = true
-	else:
-		$BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion.visible = false
+func _on_ayuda_solucion_pressed():
+	ayudaActual.visible = false
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaSolucion/LabelSolucion
+	ayudaActual.visible = true
+
+func _on_ayuda_mitigacion_pressed():
+	ayudaActual.visible = false
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaMitigacion/LabelMitigacion
+	ayudaActual.visible = true
+	
+func _on_ayuda_pres_pressed():
+	ayudaActual.visible = false
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaPres/LabelPres
+	ayudaActual.visible = true
+
+func _on_ayuda_stake_pressed():
+	ayudaActual.visible = false
+	ayudaActual = $BtnAyuda/MenuAyuda/AyudaStake/LabelStake
+	ayudaActual.visible = true
