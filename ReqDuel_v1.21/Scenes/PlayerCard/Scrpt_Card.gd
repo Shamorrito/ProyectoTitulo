@@ -52,6 +52,7 @@ func _process(_delta):
 func _on_area_card_input_event(_viewport, event, _shape_idx): #detección de click sobre la carta para seleccionarla
 	if placing != "waiting" and M12_act == false and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
+			get_viewport().set_input_as_handled()
 			St_GlobalSignals.CardSelected.emit(self)
 		else:
 			selected = false

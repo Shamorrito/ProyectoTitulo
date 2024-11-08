@@ -9,6 +9,7 @@ var cartaMitigacion: Node2D
 var Tablero: Sprite2D
 
 func _ready():
+	get_parent().get_viewport().set_physics_object_picking_sort(true)
 	$BGM.play()
 	St_GlobalSignals.reset_puntajes()
 	for key in St_GlobalSignals.Puntaje["Puntos"]:
@@ -90,7 +91,8 @@ func on_PassTurnButtonPressed(): #Trigger para repartir carta
 				#pass
 				get_tree().change_scene_to_file("res://Scenes/PantallaDerrota/SC_PantallaDerrota.tscn")
 				break
-	chooseEnemy()
+	if $UI.day != 3 and $UI.day != 8:
+		chooseEnemy()
 	if $UI.day < 10:
 		for i in range(2):
 			dealCard()
@@ -120,7 +122,7 @@ func Attack(solucion,stakeholder):
 		cartaAtacada = null
 		$Mensaje.text = "Stakeholder Satisfecho Totalmente"
 		$Mensaje.visible = true
-		await get_tree().create_timer(3).timeout  # Espera 2 segundos
+		await get_tree().create_timer(2).timeout  # Espera 2 segundos
 		$Mensaje.visible = false  # Esto hará que el Label sea invisible
 	
 	# Verifica si el ID está en el array de parches
@@ -258,3 +260,12 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
+
+
+func _on_click_capture_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		selectedCard = null
+		cartaAtacada = null
+		var cardsList = get_tree().get_nodes_in_group("solution_cards")
+		for card in cardsList:
+			card.get_node("CardSprite/Outline").visible = false

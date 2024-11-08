@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://72070gl4l86g"]
+[gd_scene load_steps=20 format=3 uid="uid://72070gl4l86g"]
 
 [ext_resource type="Script" path="res://Scenes/MetroLevel/Scrpt_MetroLevel.gd" id="1_b45ut"]
 [ext_resource type="PackedScene" uid="uid://c370rvm21bnep" path="res://Scenes/BotonAyuda/BotonAyuda.tscn" id="2_7anm3"]
@@ -16,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://38ag8pn1j3nf" path="res://Assets/Audio/SolucionParcial.mp3" id="11_i24fq"]
 [ext_resource type="AudioStream" uid="uid://b3ykhdoyrsh03" path="res://Assets/Audio/SolucionTotal.mp3" id="12_sy5di"]
 [ext_resource type="AudioStream" uid="uid://7olu7s6s3r78" path="res://Assets/Audio/ReqDuel_BGM.mp3" id="13_lajej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbn6j"]
+size = Vector2(1920, 1080)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wboky"]
 specular_color = Color(0, 0.452354, 0.452353, 1)
@@ -42,6 +45,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_uokse")
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="ClickCapture" type="Area2D" parent="ReqDuelBG"]
+visible = false
+
+[node name="ClickCaptureColl" type="CollisionShape2D" parent="ReqDuelBG/ClickCapture"]
+position = Vector2(960, 540)
+shape = SubResource("RectangleShape2D_rbn6j")
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
@@ -154,7 +165,7 @@ z_index = 3
 position = Vector2(832, 224)
 
 [node name="BotonAyuda" parent="." instance=ExtResource("2_7anm3")]
-z_index = 9
+z_index = 30
 
 [node name="Mitigacion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_5h0s1")
@@ -172,3 +183,5 @@ stream = ExtResource("12_sy5di")
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_lajej")
 volume_db = -16.957
+
+[connection signal="input_event" from="ReqDuelBG/ClickCapture" to="." method="_on_click_capture_input_event"]

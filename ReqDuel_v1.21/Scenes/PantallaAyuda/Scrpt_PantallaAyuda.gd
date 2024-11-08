@@ -48,6 +48,7 @@ func actualizarPagina():
 func _on_hitbox_mouse_entered():
 	$Ayuda_Pagina2/Ejemplo_Normal/Description.visible = true
 	$Ayuda_Pagina3/Ejemplo_Parcial/Description.visible = true
+
 func _on_hitbox_mouse_exited():
 	$Ayuda_Pagina2/Ejemplo_Normal/Description.visible = false
 	$Ayuda_Pagina3/Ejemplo_Parcial/Description.visible = false

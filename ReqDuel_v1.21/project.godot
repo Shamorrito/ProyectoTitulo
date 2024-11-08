@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ReqDuel_v1.2"
+config/name="ReqDuel_v1.21"
 run/main_scene="res://Scenes/TitleScreen/SC_TitleScreen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/icon.svg"

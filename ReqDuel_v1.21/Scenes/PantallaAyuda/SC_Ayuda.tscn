@@ -212,6 +212,7 @@ offset_bottom = 1080.0
 texture = ExtResource("2_jec3b")
 
 [node name="Ayuda_Pagina1" type="Label" parent="."]
+visible = false
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 1856.0
@@ -226,7 +227,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Ayuda_Pagina2" type="Label" parent="."]
-visible = false
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 1856.0
