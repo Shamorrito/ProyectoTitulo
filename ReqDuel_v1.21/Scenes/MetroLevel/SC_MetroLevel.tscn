@@ -48,9 +48,9 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="ClickCapture" type="Area2D" parent="ReqDuelBG"]
-visible = false
 
 [node name="ClickCaptureColl" type="CollisionShape2D" parent="ReqDuelBG/ClickCapture"]
+visible = false
 position = Vector2(960, 540)
 shape = SubResource("RectangleShape2D_rbn6j")
 
