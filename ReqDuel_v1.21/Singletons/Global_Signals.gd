@@ -102,19 +102,19 @@ var card_data = {
 	"A22": {"cardImage": "res://Assets/IMG/Respuesta/A22.png", "cardName": "Expansión de Áreas de Espera", "cost": 3, "type": "Solucion", "description": "Amplía y mejora las áreas de espera en las estaciones"},
 	"A23": {"cardImage": "res://Assets/IMG/Respuesta/A23.png", "cardName": "Programas de Incentivos para Usuarios Frecuentes", "cost": 3, "type": "Solucion", "description": "Introduce programas de incentivos y recompensas para usuarios frecuentes, como descuentos y beneficios exclusivos"},
 	"A24": {"cardImage": "res://Assets/IMG/Respuesta/A24.png", "cardName": "Mejoras en la Accesibilidad Digital", "cost": 3, "type": "Solucion", "description": "Mejora la accesibilidad de la página web y la aplicación móvil del metro"},
-	"M01": {"cardImage": "res://Assets/IMG/Mitigacion/M01.png", "cardName": "Extension de Plazo", "cost": 4, "type": "Mitigacion", "description": "Devuelve una carta de Stakeholder a su mazo"},
+	"M01": {"cardImage": "res://Assets/IMG/Mitigacion/M01.png", "cardName": "Extension de Plazo", "cost": 5, "type": "Mitigacion", "description": "Devuelve una carta de Stakeholder a su mazo"},
 	"M02": {"cardImage": "res://Assets/IMG/Mitigacion/M02.png", "cardName": "Subsidio", "cost": 3, "type": "Mitigacion", "description": "Roba dos cartas"},
-	"M03": {"cardImage": "res://Assets/IMG/Mitigacion/M03.png", "cardName": "Reestructuración", "cost": 1, "type": "Mitigacion", "description": "Descarta una carta de solución, roba una carta"},
-	"M04": {"cardImage": "res://Assets/IMG/Mitigacion/M04.png", "cardName": "Feriado", "cost": 3, "type": "Mitigacion", "description": "Aumenta la paciencia de un stakeholder por 2 turnos."},
-	"M05": {"cardImage": "res://Assets/IMG/Mitigacion/M05.png", "cardName": "Préstamo", "cost": 0, "type": "Mitigacion", "description": "Agrega $2 de presupuesto para usar durante el turno"},
+	"M03": {"cardImage": "res://Assets/IMG/Mitigacion/M03.png", "cardName": "Reestructuración", "cost": 1, "type": "Mitigacion", "description": "Descarta una carta de solución a elección, y luego roba una carta"},
+	"M04": {"cardImage": "res://Assets/IMG/Mitigacion/M04.png", "cardName": "Feriado", "cost": 3, "type": "Mitigacion", "description": "Aumenta la paciencia de un stakeholder por 2 dias."},
+	"M05": {"cardImage": "res://Assets/IMG/Mitigacion/M05.png", "cardName": "Préstamo", "cost": 0, "type": "Mitigacion", "description": "Agrega $2 de presupuesto para usar durante el dia"},
 	"M06": {"cardImage": "res://Assets/IMG/Mitigacion/M06.png", "cardName": "Bono", "cost": 0, "type": "Mitigacion", "description": "Reduce el costo de una solución en $1."},
 	"M07": {"cardImage": "res://Assets/IMG/Mitigacion/M07.png", "cardName": "Posponer", "cost": 1, "type": "Mitigacion", "description": "Aumenta la paciencia de un Stakeholder en 1 punto."},
 	"M08": {"cardImage": "res://Assets/IMG/Mitigacion/M08.png", "cardName": "Capacitación Rápida", "cost": 4, "type": "Mitigacion", "description": "Aumenta la paciencia de todos los Stakeholders activos en 1 punto."},
-	"M09": {"cardImage": "res://Assets/IMG/Mitigacion/M09.png", "cardName": "Refuerzo Temporal", "cost": 5, "type": "Mitigacion", "description": "Añade un turno adicional antes de quese reduzca la paciencia de todos los Stakeholders actuales."},
+	"M09": {"cardImage": "res://Assets/IMG/Mitigacion/M09.png", "cardName": "Refuerzo Temporal", "cost": 5, "type": "Mitigacion", "description": "Por hoy, ningun stakeholder vera reducida su paciencia al pasar de dia."},
 	"M10": {"cardImage": "res://Assets/IMG/Mitigacion/M10.png", "cardName": "Fondos Extraordinarios", "cost": 3, "type": "Mitigacion", "description": "Aumenta el presupuesto disponible para el siguiente turno en $3."},
 	"M11": {"cardImage": "res://Assets/IMG/Mitigacion/M11.png", "cardName": "Iniciativa de Comunidad", "cost": 2, "type": "Mitigacion", "description": "Satisface parcialmente un stakeholder a elección."},
-	"M12": {"cardImage": "res://Assets/IMG/Mitigacion/M12.png", "cardName": "Segunda Opcion", "cost": 5, "type": "Mitigacion", "description": "Saca 3 cartas de solución, 1 de las cartas es una solución inmediata a un stakeholder en juego."},
-	"M13": {"cardImage": "res://Assets/IMG/Mitigacion/M13.png", "cardName": "Cotización", "cost": 3, "type": "Mitigacion", "description": "Reduce el costo de todas las soluciones durante este turno en $1."}
+	"M12": {"cardImage": "res://Assets/IMG/Mitigacion/M12.png", "cardName": "Segunda Opcion", "cost": 4, "type": "Mitigacion", "description": "Saca 3 cartas, agrega 1 a tu mano y las demás se descartan."},
+	"M13": {"cardImage": "res://Assets/IMG/Mitigacion/M13.png", "cardName": "Cotización", "cost": 3, "type": "Mitigacion", "description": "Reduce el costo de todas las soluciones durante este dia en $1."}
 }
 var enemy_card_data = {
 	"Q01": {

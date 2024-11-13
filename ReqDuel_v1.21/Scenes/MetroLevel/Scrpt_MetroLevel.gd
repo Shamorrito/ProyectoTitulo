@@ -25,7 +25,14 @@ func _ready():
 	for i in range(5):
 		dealCard()
 	chooseEnemy()
-	
+
+#func _process(_delta):
+	#for card in get_tree().get_nodes_in_group("cards"):
+			#if card.cost == 1:
+				#$Tablero.modulate = Color(1, 0.478, 0.41, 0.384)
+			#else:
+				#$Tablero.modulate = Color(1, 1, 1, 0.384)
+
 	
 func dealCard(): #robar carta nueva
 	if len(cardsList) > 0 && ($CardSlots.cardsOnPlay) <= 11 && $UI.day <= 10:
@@ -81,11 +88,9 @@ func on_PassTurnButtonPressed(): #Trigger para repartir carta
 	$Tablero.modulate = Color(1, 1, 1, 0.384)
 	# Revisa todas las cartas generadas y verifica su tipo
 	if $UI.day <= 10:
-		var CartaUrgente = false
 		for card in get_tree().get_nodes_in_group("cards"):
 			if card.cost == 2:
 				$Tablero.modulate = Color(1, 0.478, 0.41, 0.384)
-				CartaUrgente = true
 			if card.cost == 1 && card.M09_act != true:
 				#para Debug, comentar cambiando get_tree()+break, por pass
 				#pass
@@ -185,7 +190,16 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 		var ataque
 		for cartas in get_tree().get_nodes_in_group("solution_cards"):
 			cartas.get_node("CardSprite/Outline").visible = false
-
+		
+		if (card) != null && (card.type) == "Mitigacion":
+			if card.ID in ["M03","M06"]:
+				$Mensaje.text = "Seleccione una carta de solución"
+				$Mensaje.visible = true
+				
+			elif card.ID not in ["M02","M05","M08","M09","M10","M12","M13","M03","M06"]:
+				$Mensaje.text = "Seleccione una carta de StakeHolder"
+				$Mensaje.visible = true
+		
 		if card.ID in ["M02","M05","M08","M09","M10","M12","M13"]:
 			if  $UI.budgetCurrent >= card.cost:
 				$UI.budgetCurrent = $UI.budgetCurrent - card.cost
@@ -207,9 +221,11 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
+				selectedCard= null
 
 		elif (card.type) == "Solucion" && (selectedCard) != null && selectedCard.ID in ["M03","M06"]:
 			if  $UI.budgetCurrent >= selectedCard.cost:
+				$Mensaje.visible = false  # Esto hará que el Label sea invisible
 				$UI.budgetCurrent = $UI.budgetCurrent - selectedCard.cost
 				St_EffectsHandler.executeEffect(selectedCard,card)
 				$Mitigacion.play()
@@ -228,6 +244,7 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
+				selectedCard= null
 
 		elif (card.type) == "Solucion" or (card.type) == "Mitigacion":
 			card.get_node("CardSprite/Outline").visible = true
@@ -235,9 +252,12 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 
 		elif (card.type) == "Stakeholder":
 			cartaAtacada = card
+			$Mensaje.visible = false  # Esto hará que el Label sea invisible
+			print("acaaa")
 			if (selectedCard) != null && $UI.budgetCurrent >= selectedCard.cost && selectedCard.ID not in ["M03","M06"]:
 				$UI.budgetCurrent = $UI.budgetCurrent - selectedCard.cost
 				if (selectedCard.type) == "Mitigacion":
+					
 					St_EffectsHandler.executeEffect(selectedCard,card)
 					$Mitigacion.play()
 					St_GlobalSignals.Puntaje["Puntos"]["mitigaciones"] += 1
@@ -255,12 +275,15 @@ func on_CardSelected(card): #Trigger para cuando una carta es seleccionada
 						if cartas.placing == "graveyard":
 							cartas.en_graveyard()
 					Attack(selectedCard,cartaAtacada)
-			else:
+			elif (selectedCard) != null && $UI.budgetCurrent <= selectedCard.cost:
 				$Mensaje.text = "No hay presupuesto suficiente"
 				$Mensaje.visible = true
 				await get_tree().create_timer(3).timeout  # Espera 2 segundos
 				$Mensaje.visible = false  # Esto hará que el Label sea invisible
-
+				print("sakfhasf")
+				selectedCard= null
+			else:
+				selectedCard = null
 
 func _on_click_capture_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

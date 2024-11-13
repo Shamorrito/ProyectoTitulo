@@ -56,7 +56,7 @@ shape = SubResource("RectangleShape2D_rbn6j")
 
 [node name="Overlay" type="ColorRect" parent="."]
 visible = false
-z_index = 99
+z_index = 9
 offset_right = 1920.0
 offset_bottom = 1088.0
 color = Color(0, 0, 0, 0.752941)

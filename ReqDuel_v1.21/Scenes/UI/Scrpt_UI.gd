@@ -30,4 +30,3 @@ func _on_btn_pass_turn_pressed():
 		get_tree().change_scene_to_file("res://Scenes/PantallaVictoria/SC_PantallaVictoria.tscn")
 	$Calendario/txtDays.text = "Día %d" %day
 	St_GlobalSignals.PassTurnButtonPressed.emit()
-	

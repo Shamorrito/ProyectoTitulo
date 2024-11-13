@@ -111,6 +111,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rcuw1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3pf6t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3hu5d")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4k2ij")
-text = "Pasar Turno"
+text = "Pasar Día"
 
 [connection signal="pressed" from="BtnPassTurn" to="." method="_on_btn_pass_turn_pressed"]
