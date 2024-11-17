@@ -17,13 +17,17 @@ func _process(_delta):
 
 func _on_btn_name_input_pressed():
 	NuevoJugador = $InputNuevoJugador.text.strip_edges().to_upper()
-	if NuevoJugador != \"\":
+	# Expresión regular para validar el formato \"XXXXXXXX-X\"
+	var regex = RegEx.new()
+	regex.compile(\"^[A-Z0-9]{8}-[A-Z0-9]$\")  # 8 alfanuméricos, un guion, y 1 alfanumérico
+	
+	if regex.search(NuevoJugador):  # Si el texto coincide con el patrón
 		St_GlobalSignals.NombreUsuario = NuevoJugador
 		get_tree().change_scene_to_file(\"res://Scenes/MetroLevel/SC_MetroLevel.tscn\")
 	else:
 		$InputNuevoJugador.clear()
-		$InputNuevoJugador.placeholder_text = \"Porfavor, elige un nombre adecuado\"
-		print(\"no, \\\"\", NuevoJugador, \"\\\"\")
+		$InputNuevoJugador.placeholder_text = \"INGRESA RUT SIN PUNTOS Y CON GUIÓN\"
+		
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4tfp"]
@@ -127,7 +131,7 @@ theme_override_fonts/font = ExtResource("2_m7ftc")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_1cadx")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ijt0s")
-placeholder_text = "Ingresa tu nombre aquí"
+placeholder_text = "Ingresa tu RUT aquí"
 alignment = 1
 shortcut_keys_enabled = false
 
